@@ -23,11 +23,6 @@
   ],
   "actions": [
     {
-      "label": "Sign In",
-      "href": "https://tulipai.onrender.com/",
-      "variant": "ghost"
-    },
-    {
       "label": "Start a Sprint",
       "href": "/contact",
       "variant": "primary"
