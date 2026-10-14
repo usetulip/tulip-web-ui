@@ -1,0 +1,52 @@
+{
+  "brand": {
+    "name": "Tulip",
+    "description": "AI-powered portfolio template designed to help SaaS founders, creators launch stunning sites effortlessly and fast.",
+    "copyright": "© 2025 Tulip. All rights reserved."
+  },
+  "columns": [
+    {
+      "title": "Company",
+      "links": [
+        { "label": "Home", "href": "/" },
+        { "label": "About us", "href": "/about" },
+        { "label": "Pricing", "href": "/#pricing" },
+        { "label": "Blog", "href": "/blog" },
+        {
+          "label": "Blog Details",
+          "href": "/blog/how-ai-design-tools-help-founders-launch-10x-faster"
+        }
+      ]
+    },
+    {
+      "title": "Product",
+      "links": [
+        { "label": "Features", "href": "/#engine" },
+        { "label": "Careers", "href": "/career" },
+        { "label": "Contact", "href": "/contact" },
+        { "label": "404", "href": "/404" },
+        { "label": "Privacy Policy", "href": "/privacy-policy" }
+      ]
+    }
+  ],
+  "newsletter": {
+    "title": "Newsletter",
+    "description": "Get tips, product updates, and insights on working smarter with AI.",
+    "placeholder": "Email address",
+    "buttonText": "Subscribe"
+  },
+  "socials": [
+    { "name": "Facebook", "href": "https://facebook.com/", "icon": "facebook" },
+    {
+      "name": "LinkedIn",
+      "href": "https://www.linkedin.com/",
+      "icon": "linkedin"
+    },
+    {
+      "name": "Instagram",
+      "href": "https://www.instagram.com/",
+      "icon": "instagram"
+    },
+    { "name": "Telegram", "href": "https://telegram.org/", "icon": "telegram" }
+  ]
+}

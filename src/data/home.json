@@ -1,0 +1,308 @@
+{
+  "hero": {
+    "badge": {
+      "tag": "New",
+      "text": "Tulip for founders who ship"
+    },
+    "title": "The design layer for software that actually ships",
+    "description": "Tulip turns your product vision into a working system that powers everything from a Figma system and a production React repo, delivered in 48 hours.",
+    "cta": {
+      "label": "Start a sprint",
+      "href": "/contact"
+    },
+    "rating": {
+      "score": "5.0",
+      "count": "2.4k+ Reviews",
+      "avatars": [
+        "/assets/SqNwL1Tw7L1E0WNkpyNItGDs.png",
+        "/assets/FaQR5JopfGvV9PdVkQKdqdkM4Y.png",
+        "/assets/j5beBC8E1nADaydjfFw27YLtUyQ.png"
+      ]
+    },
+    "preview": {
+      "label": "Launch video goes here",
+      "thumbnail": "/assets/HMM78V7QyElZ1rgeuwTqXVh2r4.png"
+    }
+  },
+  "logoCloud": {
+    "title": "Trusted by 10,000+ founders & business owners.",
+    "logos": [
+      {
+        "name": "Startup Studios",
+        "icon": "/assets/tWYIVayvo1Ux8FP03WN0VvAlKw.svg"
+      },
+      {
+        "name": "Lead Gen Tools",
+        "icon": "/assets/VJOmWtA4UYqehUcCshTDbZBXbY.svg"
+      },
+      {
+        "name": "AI - Startups",
+        "icon": "/assets/ucG6iPWtfsHRdLQ3aipU7gTZw.svg"
+      },
+      {
+        "name": "No-Code Tools",
+        "icon": "/assets/7uCg21nDC64riMppTb0WECWEo6k.svg"
+      },
+      {
+        "name": "B2B Platforms",
+        "icon": "/assets/sx8xnSexDyD8sJ9hw3oFTFRvbrE.svg"
+      }
+    ]
+  },
+  "metrics": {
+    "badge": "The frontend bottleneck",
+    "manifestoText": "AI finally has taste. While generic tools output un-deployable UI and traditional agencies take five weeks to draw wireframes, Tulip bridges the gap. Our engine compiles high-taste, deterministic design systems and production-ready infrastructure in exactly 48 hours.",
+    "items": [
+      {
+        "id": "metric-1",
+        "value": "48h",
+        "number": 48,
+        "suffix": "h",
+        "label": "Garaunteed Delivery",
+        "color": "primary"
+      },
+      {
+        "id": "metric-2",
+        "value": "100%",
+        "number": 100,
+        "suffix": "%",
+        "label": "Native Components",
+        "color": "lime"
+      },
+      {
+        "id": "metric-3",
+        "value": "0%",
+        "number": 0,
+        "suffix": "%",
+        "label": "Hallucinated CSS",
+        "color": "coral"
+      }
+    ],
+
+    "chips": [
+      {
+        "id": "chip-1",
+        "label": "Deterministic UI",
+        "className": "top-[6%] right-[8%]",
+        "bgGradient": "bg-gradient-to-r from-[#b57bff] to-[#8d47fe]",
+        "shadowColor": "shadow-[#8d47fe]/30",
+        "initialRotation": -14
+      },
+      {
+        "id": "chip-2",
+        "label": "Agency-Grade",
+        "className": "top-[24%] right-[22%]",
+        "bgGradient": "bg-gradient-to-r from-[#ffbd59] to-[#ff914d]",
+        "shadowColor": "shadow-[#ff914d]/30",
+        "initialRotation": -6
+      },
+      {
+        "id": "chip-3",
+        "label": "Strict Systems",
+        "className": "top-[42%] right-[6%]",
+        "bgGradient": "bg-gradient-to-r from-[#70d6ff] to-[#38b6ff]",
+        "shadowColor": "shadow-[#38b6ff]/30",
+        "initialRotation": 8
+      },
+      {
+        "id": "chip-4",
+        "label": "Production Ready",
+        "className": "bottom-[28%] left-[6%]",
+        "bgGradient": "bg-gradient-to-r from-[#b7eb50] to-[#95d52b]",
+        "shadowColor": "shadow-[#95d52b]/30",
+        "initialRotation": -16
+      },
+      {
+        "id": "chip-5",
+        "label": "Design Governance",
+        "className": "bottom-[14%] right-[24%]",
+        "bgGradient": "bg-gradient-to-r from-[#ff9a62] to-[#ff7b54]",
+        "shadowColor": "shadow-[#ff7b54]/30",
+        "initialRotation": 12
+      },
+      {
+        "id": "chip-6",
+        "label": "No Hallucinations",
+        "className": "bottom-[2%] right-[6%]",
+        "bgGradient": "bg-gradient-to-r from-[#4ef2bb] to-[#1fd1a5]",
+        "shadowColor": "shadow-[#1fd1a5]/30",
+        "initialRotation": -7
+      }
+    ]
+  },
+  "bundle": {
+    "badge": "The Bundle",
+    "title": "The ultimate technical handoff",
+    "description": "Everything your engineering team needs to start hooking up the backend today",
+    "items": [
+      {
+        "id": "bundle-1",
+        "title": "Master Figma System",
+        "description": "A pristine file pre-configured with strict local variables, semantic color tokens, and locked-in typography.",
+        "icon": "figma",
+        "image": "/assets/fJMMzQWbchAcNrvxPyjySeQcU.png"
+      },
+      {
+        "id": "bundle-2",
+        "title": "Production React Repo",
+        "description": "Your exact 1:1 engineering mirror. Clean, accessible components ready to drop into any Next.js environment.",
+        "icon": "terminal",
+        "image": "/assets/6rjXtbd8E2FHwFV3zjojDd9QI.png"
+      },
+      {
+        "id": "bundle-3",
+        "title": "High-Legibility Typography",
+        "description": "Standardized text for maximum readability across dense financial or analytical dashboards.",
+        "icon": "type",
+        "image": "/assets/IeoZkp15RNnms3DLvQu03eYkRRA.png"
+      },
+      {
+        "id": "bundle-4",
+        "title": "Native Iconography",
+        "description": "We strip out generic open-source icons and embed proprietary, sharp SVGs directly into your UI blocks.",
+        "icon": "image",
+        "image": "/assets/OkLS35BGhVWI8Rae54CP13jG5M.png"
+      },
+      {
+        "id": "bundle-5",
+        "title": "The 48-Hour Handoff",
+        "description": "You receive a complete UI bundle. Download your Master Figma file, your synchronized GitHub repository, and your custom coded layouts, ready for your backend engineers.",
+        "icon": "zap",
+        "image": "/assets/LjoxM75Qd30oQtgpVAY3zPBwI.png"
+      }
+    ]
+  },
+  "sprintWorkflow": {
+    "badge": "The 48 Hour Sprint",
+    "title": "Zero agency bloat. Pure execution.",
+    "description": "Stop waiting weeks for wireframes and endless feedback loops. Give us your technical constraints and deploy your React codebase in 48h.",
+    "cards": [
+      {
+        "phase": "Minute Zero",
+        "title": "Handling your UI DNA and the architecture",
+        "description": "Don't write open-ended prompts. Just fill out our strict 5-minute intake brief. Give us your primary hex codes, select your layout archetype, and check off the required features.",
+        "cta": {
+          "label": "View the Brief Wizard",
+          "href": "#pricing"
+        },
+        "image": "/assets/handle-ui-dna.png"
+      },
+      {
+        "phase": "HOUR 48",
+        "title": "Governed by taste. Compiled by AI.",
+        "description": "We don't blindly ship AI drafts. Our engine maps your brief to an Intermediate UI Representation (UIR). An agent audits the visual tokens, ensures the Figma variables perfectly match the repository, and verifies WCAG accessibility before handoff.",
+        "cta": {
+          "label": "See the Output Repo",
+          "href": "#pricing"
+        },
+        "image": "/assets/48-hour.png"
+      }
+    ]
+  },
+  "engine": {
+    "badge": "The Engine",
+    "title": "Built for strict constraints",
+    "description": "We force AI to use your actual Lego bricks, not invent new ones.",
+    "features": [
+      {
+        "id": "eng-1",
+        "title": "Figma Native Tokens",
+        "description": "Every layout is constructed using vetted, accessible Radix and defined UI elements. No messy, custom classes."
+      },
+      {
+        "id": "eng-2",
+        "title": "Token Synchronizationfolio",
+        "description": "Your spacing, radii, and color hexes match exactly from Figma to Tailwind."
+      },
+      {
+        "id": "eng-3",
+        "title": "Developer Ready",
+        "description": "Clean Next.js and React code structured for immediate backend integration."
+      },
+      {
+        "id": "eng-4",
+        "title": "Dark Mode Default",
+        "description": "High-contrast, sleek aesthetics built natively into your Tailwind configuration."
+      },
+      {
+        "id": "eng-5",
+        "title": "Zero Lock-in",
+        "description": "You own 100% of the Figma files and the GitHub repository."
+      }
+    ]
+  },
+  "pricing": {
+    "badge": "Pricing",
+    "title": "One Flat Fee",
+    "description": "Predictable and economics",
+    "plans": [
+      {
+        "id": "blueprint",
+        "name": "The Blueprint",
+        "price": "$499",
+        "period": "/ month",
+        "description": "Figma Master System",
+        "buttonText": "Buy Figma System",
+        "buttonVariant": "outline",
+        "buttonHref": "/contact?plan=The%20Blueprint",
+        "features": [
+          "Token registry",
+          "Component library",
+          "Custom icons",
+          "24-hr delivery",
+          "Figma variable sync",
+          "Free community updates"
+        ]
+      },
+      {
+        "id": "core-sprint",
+        "name": "The Core Sprint",
+        "price": "$999",
+        "period": "/ month",
+        "description": "The Full Infrastructure",
+        "badge": "Save 20%",
+        "popular": true,
+        "buttonText": "Get Started Now",
+        "buttonVariant": "primary",
+        "buttonHref": "/contact?plan=The%20Core%20Sprint",
+        "features": [
+          "Master Figma System",
+          "React/Next.js Starter Repo",
+          "Pre-configured Tailwind",
+          "4 Custom Page Layouts",
+          "48-hr delivery",
+          "Slack channel access"
+        ]
+      },
+      {
+        "id": "pipeline",
+        "name": "The Pipeline",
+        "price": "$4,999",
+        "period": "/ month",
+        "description": "Continuous Governance",
+        "buttonText": "Buy Figma System",
+        "buttonVariant": "outline",
+        "buttonHref": "/contact?plan=The%20Pipeline",
+        "features": [
+          "Everything in Sprint",
+          "Automated GitHub PR audits",
+          "Custom design-system drift checks",
+          "Priority AI generation",
+          "Dedicated design engineer",
+          "24/7 Slack support"
+        ]
+      }
+    ]
+  },
+  "ctaBanner": {
+    "badge": "Start Now",
+    "title": "Ready to fix your frontend bottleneck?",
+    "description": "Stop wasting engineering cycles on padding and hex codes. Get back to finding product-market fit",
+    "buttonText": "Start Your 48-Hour Sprint",
+    "buttonHref": "/contact",
+    "cta": {
+      "label": "Start Your 48-Hour Sprint",
+      "href": "/contact"
+    }
+  }
+}

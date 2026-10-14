@@ -1,0 +1,71 @@
+{
+  "hero": {
+    "title": "Get in touch with us",
+    "description": "We're here to answer your questions, explore opportunities, and help bring your ideas to life. Reach out to our team we typically respond within 24 hours."
+  },
+  "form": {
+    "title": "Reach out to us",
+    "description": "Contact us for questions, feedback, or inquiries.",
+    "fields": {
+      "firstName": {
+        "label": "First Name",
+        "placeholder": "First name"
+      },
+      "lastName": {
+        "label": "Last name",
+        "placeholder": "Last name"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "gr8rstudio@gmail.com"
+      },
+      "phone": {
+        "label": "Phone number",
+        "placeholder": "+00 999 888 777"
+      },
+      "message": {
+        "label": "Message",
+        "placeholder": "Type your message here"
+      }
+    },
+    "privacy": {
+      "prefix": "By reaching out to us, you agree to our ",
+      "linkLabel": "Privacy Policy.",
+      "linkHref": "/privacy-policy"
+    },
+    "submitButton": {
+      "label": "Send Message"
+    }
+  },
+  "map": {
+    "openInMapsText": "Open in Maps",
+    "openInMapsHref": "https://maps.google.com/?q=San+Francisco,+CA+94104,+United+States",
+    "embedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.086489382229!2d-122.40348782358327!3d37.791559811210134!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858062137976e1%3A0x6b09328a6f3769c0!2sSan%20Francisco%2C%20CA%2094104!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+  },
+  "infoCards": [
+    {
+      "id": "info-email",
+      "label": "Email",
+      "description": "Reach our team directly via email",
+      "value": "support@ryplix.com",
+      "href": "mailto:support@ryplix.com",
+      "icon": "mail"
+    },
+    {
+      "id": "info-phone",
+      "label": "Phone",
+      "description": "Speak with our support team anytime",
+      "value": "+1 (415) 234-7890",
+      "href": "tel:+14152347890",
+      "icon": "phone"
+    },
+    {
+      "id": "info-address",
+      "label": "Address",
+      "description": "Visit our office, Ryplix HQ",
+      "value": "San Francisco, CA 94104, United States",
+      "href": "https://maps.google.com/?q=San+Francisco,+CA+94104,+United+States",
+      "icon": "map-pin"
+    }
+  ]
+}

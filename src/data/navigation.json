@@ -1,0 +1,54 @@
+{
+  "logo": {
+    "text": "Tulip",
+    "href": "/"
+  },
+  "links": [
+    {
+      "label": "Home",
+      "href": "/"
+    },
+    {
+      "label": "Product",
+      "href": "/#bundle"
+    },
+    {
+      "label": "Engine",
+      "href": "/#engine"
+    },
+    {
+      "label": "Pricing",
+      "href": "/#pricing"
+    }
+  ],
+  "actions": [
+    {
+      "label": "Sign In",
+      "href": "https://tulipai.onrender.com/",
+      "variant": "ghost"
+    },
+    {
+      "label": "Start a Sprint",
+      "href": "/contact",
+      "variant": "primary"
+    }
+  ],
+  "mainNav": [
+    {
+      "title": "The Product",
+      "href": "/#bundle"
+    },
+    {
+      "title": "Integration",
+      "href": "/#engine"
+    },
+    {
+      "title": "Wall of Love",
+      "href": "/#testimonials"
+    },
+    {
+      "title": "Pricing",
+      "href": "/#pricing"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "badge": "FAQs",
+  "title": "Frequently Asked Questions",
+  "description": "From setup to support, here are the answers you need to launch faster with confidence.",
+  "items": [
+    {
+      "id": "faq-1",
+      "question": "Do you build the backend API or database?",
+      "answer": "No. We provide the visual frontend and the React components. Your engineers handle the Postgres databases, Auth logic, and backend connections. This strict boundary is how we move so fast."
+    },
+    {
+      "id": "faq-2",
+      "question": "Can I customize everything in the template?",
+      "answer": "Yes, all components, layout blocks, typography tokens, and colors are built with 100% standard Tailwind CSS and Figma variables so you can effortlessly adapt them to your brand."
+    },
+    {
+      "id": "faq-3",
+      "question": "Is this template only for SaaS founders?",
+      "answer": "While designed primarily for SaaS founders and digital product builders, agencies, solo hackers, and studios can use Tulip to ship high-converting pages in record time."
+    },
+    {
+      "id": "faq-4",
+      "question": "How fast can I get my site live?",
+      "answer": "With our synchronized Figma design system and ready-to-deploy Next.js repository, you can launch a production-ready website in as little as 48 hours."
+    },
+    {
+      "id": "faq-5",
+      "question": "Can I use this for client projects?",
+      "answer": "Yes! Once you acquire the system, you have full ownership of the code and design files to use for both personal and commercial client projects with zero lock-in."
+    },
+    {
+      "id": "faq-6",
+      "question": "Is Framer free to use with this template?",
+      "answer": "The Next.js repository is completely self-contained and free of any subscription dependencies. You can host it on Vercel, Netlify, or AWS with zero ongoing licensing fees."
+    }
+  ]
+}

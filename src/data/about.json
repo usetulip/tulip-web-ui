@@ -1,0 +1,148 @@
+{
+  "hero": {
+    "title": "We build tools that help founders launch site.",
+    "description": "From indie creators to lean SaaS teams, we empower people to launch beautiful, fast websites backed by AI, not bloated workflows.",
+    "images": {
+      "main": "/assets/6PGmJG28Ocor0cQhAedQTirgYqQ.png",
+      "secondary": "/assets/4EhEPjGF445dvC8QO83jbCtGF8.png"
+    },
+    "featuredQuote": {
+      "score": "5.0",
+      "text": "“I built a site for my SaaS launch in one evening. the AI suggestions saved hours, and the design looked like I hired a top agency.”"
+    }
+  },
+  "story": {
+    "badge": "Our Story",
+    "headline": "What began as a weekend experiment quickly evolved into a startup-ready design platform built for speed, style, and the real-world needs of modern founders.",
+    "description": "What started as a weekend build for faster portfolio templates quickly turned into something much bigger. We saw founders and creators struggling with slow tools, unclear layouts, and unpolished design. So we built a better way clean templates, smart AI, and instant publishing all in one powerful system.",
+    "stats": [
+      {
+        "number": 25,
+        "suffix": "+",
+        "value": "25+",
+        "label": "SaaS brands launched"
+      },
+      {
+        "number": 100,
+        "suffix": "+",
+        "value": "100+",
+        "label": "Startup Projects"
+      },
+      {
+        "number": 4,
+        "suffix": "+",
+        "value": "4+",
+        "label": "AI - tools integrated"
+      }
+    ]
+  },
+  "missionVision": {
+    "badge": "Mission & Vission",
+    "title": "Built with Clarity",
+    "description": "We believe great ideas deserve great execution. Our tools are designed to simplify the complex and make bold launches feel effortless.",
+    "image": "/assets/vUj1lcOOMpFZkoFq5IgIFCCx4.png",
+    "problem": {
+      "title": "The problem",
+      "description": "Founders and freelancers often waste weeks on landing pages that don’t convert. clunky builders, slow previews, uninspired layouts kill momentum and budgets. beautiful design was locked behind agencies or templates that didn't scale."
+    },
+    "solution": {
+      "title": "Our solution",
+      "description": "We reimagined site creation from the ground up. With fast-start templates, AI-assisted customization, and client-ready layouts, you go live in hours not weeks. Our platform helps you look like a brand, without acting like an agency."
+    }
+  },
+  "team": {
+    "badge": "Core Team",
+    "title": "The team behind the tools",
+    "description": "We're a small, focused crew of builders, designers, and thinkers on a mission to make launching high-converting sites easier for modern creators.",
+    "members": [
+      {
+        "id": "team-1",
+        "name": "Esther Howard",
+        "role": "CEO & Co-founder",
+        "avatar": "/assets/WNpS3VW8urvuJAMrcuCS39VQ9yo.png",
+        "socials": {
+          "x": "https://x.com",
+          "linkedin": "https://linkedin.com",
+          "instagram": "https://instagram.com"
+        }
+      },
+      {
+        "id": "team-2",
+        "name": "Brooklyn Simmons",
+        "role": "Web developer",
+        "avatar": "/assets/6uuWYe1XQHEp7uMnWE6RPHYGY.png",
+        "socials": {
+          "x": "https://x.com",
+          "linkedin": "https://linkedin.com",
+          "instagram": "https://instagram.com"
+        }
+      },
+      {
+        "id": "team-3",
+        "name": "Ralph Edwards",
+        "role": "Head of Product",
+        "avatar": "/assets/WjGywe2K8GriHthKGM0QZw8J7Ac.png",
+        "socials": {
+          "x": "https://x.com",
+          "linkedin": "https://linkedin.com",
+          "instagram": "https://instagram.com"
+        }
+      },
+      {
+        "id": "team-4",
+        "name": "Darlene Robertson",
+        "role": "Lead UX Designer",
+        "avatar": "/assets/J1zOLBDEjfNaURCUZIxCORAVB50.png",
+        "socials": {
+          "x": "https://x.com",
+          "linkedin": "https://linkedin.com",
+          "instagram": "https://instagram.com"
+        }
+      },
+      {
+        "id": "team-5",
+        "name": "Robert Fox",
+        "role": "Chief Technology Officer",
+        "avatar": "/assets/HuIjZLgkAkLMJCzYQT2link8gIk.png",
+        "socials": {
+          "x": "https://x.com",
+          "linkedin": "https://linkedin.com",
+          "instagram": "https://instagram.com"
+        }
+      },
+      {
+        "id": "team-6",
+        "name": "Cameron Williamson",
+        "role": "Head of Operations",
+        "avatar": "/assets/ruCUpvaPr8Ncg0XtaFc0NKGpuU.png",
+        "socials": {
+          "x": "https://x.com",
+          "linkedin": "https://linkedin.com",
+          "instagram": "https://instagram.com"
+        }
+      },
+      {
+        "id": "team-7",
+        "name": "Guy Hawkins",
+        "role": "Customer Success Manager",
+        "avatar": "/assets/zc1acThs5RUWQTQutEKUGNqn07c.png",
+        "socials": {
+          "x": "https://x.com",
+          "linkedin": "https://linkedin.com",
+          "instagram": "https://instagram.com"
+        }
+      },
+      {
+        "id": "team-8",
+        "name": "Bessie Cooper",
+        "role": "Growth & Partnerships Lead",
+        "avatar": "/assets/gNjb0q6mt3IYm2wRC10jwYo2gM.png",
+        "socials": {
+          "x": "https://x.com",
+          "linkedin": "https://linkedin.com",
+          "instagram": "https://instagram.com"
+        }
+      }
+    ]
+  }
+}

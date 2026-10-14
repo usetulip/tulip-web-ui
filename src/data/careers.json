@@ -1,0 +1,53 @@
+{
+  "hero": {
+    "title": "Careers at Tulip",
+    "description": "Join our team of designers, engineers, and AI pioneers building the modern design infrastructure for software.",
+    "image": "/assets/hq5piUj3whK7ClrqKsGv2NVyyA.png"
+  },
+  "jobOpenings": {
+    "title": "Job openings",
+    "description": "By applying for the position, you agree to our Candidate ",
+    "privacyLink": {
+      "label": "Privacy Policy.",
+      "href": "/privacy-policy"
+    },
+    "jobs": [
+      {
+        "id": "job-1",
+        "title": "UX/UI Designer",
+        "description": "We’re looking for a UX/UI Designer to craft modern and AI SaaS platforms.",
+        "location": "Toronto, Canada",
+        "workType": "Hybrid",
+        "salary": "$70k - $110k /year",
+        "applyHref": "/contact"
+      },
+      {
+        "id": "job-2",
+        "title": "Design System Specialist",
+        "description": "Join our team as a Design System Specialist to lead the creation scalable UI components.",
+        "location": "Remote",
+        "workType": "Full Remote",
+        "salary": "$85k - $125k /year",
+        "applyHref": "/contact"
+      },
+      {
+        "id": "job-3",
+        "title": "Landing Page Designer (AI SaaS)",
+        "description": "We’re seeking a high-performing landing pages for our AI-powered product lines.",
+        "location": "Toronto, Canada",
+        "workType": "Inhouse",
+        "salary": "$65k - $95k /year",
+        "applyHref": "/contact"
+      },
+      {
+        "id": "job-4",
+        "title": "Product Designer – PropertyTech",
+        "description": "We’re building innovative solutions in property management and we need a product designer.",
+        "location": "Remote",
+        "workType": "Full Remote",
+        "salary": "$80k - $120k /year",
+        "applyHref": "/contact"
+      }
+    ]
+  }
+}

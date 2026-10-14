@@ -1,0 +1,129 @@
+{
+  "hero": {
+    "title": "AI-Driven blog & articles",
+    "description": "Stay updated with smart strategies, founder stories, and design tips that help you build faster, look sharper, and grow with confidence."
+  },
+  "posts": [
+    {
+      "slug": "how-ai-design-tools-help-founders-launch-10x-faster",
+      "title": "How AI design tools help founders launch 10x faster",
+      "category": "AI tools",
+      "date": "Aug 5, 2025",
+      "readTime": "4 min read",
+      "author": {
+        "name": "Sarah Fox",
+        "role": "AI content specialist",
+        "avatar": "/assets/6PGmJG28Ocor0cQhAedQTirgYqQ.png"
+      },
+      "image": "/assets/L0rCrmcsjl0wC0Dp2Xv2vnt2bpo.png",
+      "excerpt": "Most SaaS founders waste hours every week juggling tools, managing layout tweaks, and updating content. This article explores how AI agents automate these tasks—so you can launch faster, focus better, and scale smarter.",
+      "content": {
+        "overview": "Most SaaS founders waste hours every week juggling tools, managing layout tweaks, and updating content. This article explores how Flexfolio uses AI agents to automate these tasks—so you can launch faster, focus better, and scale smarter. you'll discover how AI is quietly powering design, layout, and publishing behind the scenes.\n\nIn this article, we’ll explore how intelligent AI agents replace repetitive tasks with automation that runs quietly in the background. You’ll see how real businesses using them today just a few clicks.",
+        "sections": [
+          {
+            "heading": "Manual work slows you down",
+            "body": "From reworking page layouts to rewriting onboarding copy every manual step adds friction. Most teams lose days making edits that could be automated.\n\nThese repetitive tasks kill creative flow and delay real momentum. Without automation, scaling becomes slow, stressful, and error-prone."
+          },
+          {
+            "quote": "“Before Flexfolio, launching a polished site felt overwhelming. now, AI handles the heavy lifting we can focus on growth, not grunt work.”",
+            "quoteAuthor": "Jordan Miles, Startup Founder"
+          },
+          {
+            "heading": "Smart agents for smart launches",
+            "body": "Flexfolio’s AI agents aren’t just helpful they’re built to launch for you. from the moment you input your brand idea, they begin crafting layouts, inserting optimized copy, and auto-structuring your page sections. these agents understand the flow of high-converting pages and adapt in your product type and use case. no dragging, coding, or second-guessing just smart automation that feels like magic.",
+            "bulletPoints": [
+              "Autogenerate landing pages from prompts",
+              "Layout adjustments based on audience behavior"
+            ]
+          },
+          {
+            "heading": "Real-world example",
+            "body": "A SaaS founder wanted to launch a product page in a day. Instead of hiring designers or developers, they entered a few brand details. Flexfolio’s Smart Agents instantly generated a high-converting layout complete with hero section, feature cards, and CTAs.\n\nAfter adjusting a few text prompts, the page was live fully branded and optimized. the founder saved weeks of back-and-forth with a team and launched confidently in under an hour, ready to collect leads and feedback."
+          },
+          {
+            "heading": "How to get started",
+            "body": "Launching with Flexfolio is effortless no need for coding, design tools, or long setup processes. In just a few clicks, you can go from concept to conversion-ready site using Smart AI Agents.",
+            "bulletPoints": [
+              "Choose a template that fits your goal portfolio, landing page, or case study.",
+              "Add your inputs like brand name, tone, or key features"
+            ]
+          },
+          {
+            "heading": "Final thoughts",
+            "body": "AI agents don’t replace creativity they remove the grunt work. with Flexfolio, founders get to skip the busywork and focus on building something great. The result? Launch-ready sites that feel custom without the custom hassle."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "building-a-bold-saas-website-without-hiring-a-team",
+      "title": "Building a bold SaaS website without hiring a team",
+      "category": "No-code",
+      "date": "Jul 28, 2025",
+      "readTime": "5 min read",
+      "author": {
+        "name": "Ralph Edwards",
+        "role": "Head of Product",
+        "avatar": "/assets/vUj1lcOOMpFZkoFq5IgIFCCx4.png"
+      },
+      "image": "/assets/iAv1XgqcndirUhsCn15IvLiGMA.png",
+      "excerpt": "Learn how modern solo founders are leveraging component libraries and pre-built design systems to ship agency-grade websites in days."
+    },
+    {
+      "slug": "from-zero-to-portfolio-fast-sites-with-ai-blocks",
+      "title": "From zero to portfolio: fast sites with AI blocks",
+      "category": "Portfolio",
+      "date": "Jul 15, 2025",
+      "readTime": "3 min read",
+      "author": {
+        "name": "Darlene Robertson",
+        "role": "Lead UX Designer",
+        "avatar": "/assets/WNpS3VW8urvuJAMrcuCS39VQ9yo.png"
+      },
+      "image": "/assets/TYYBmuex5BEFVV9E7qvfXkZFU.png",
+      "excerpt": "Discover how modular AI layout blocks streamline the website building process for creators and agencies alike."
+    },
+    {
+      "slug": "why-every-indie-hacker-needs-a-smart-launch-stack",
+      "title": "Why every Indie hacker needs a smart launch stack",
+      "category": "Indie Hackers",
+      "date": "Jun 30, 2025",
+      "readTime": "6 min read",
+      "author": {
+        "name": "Brooklyn Simmons",
+        "role": "Web developer",
+        "avatar": "/assets/4EhEPjGF445dvC8QO83jbCtGF8.png"
+      },
+      "image": "/assets/4hPoxbsyluNimkK7Q5yvWuHHTfE.png",
+      "excerpt": "Stop getting bogged down by boilerplate code. Here is the modern stack that gets you from idea to paying customers in 48 hours."
+    },
+    {
+      "slug": "design-like-a-brand-move-like-a-startup",
+      "title": "Design like a brand. omve like a startup",
+      "category": "Branding",
+      "date": "Jun 18, 2025",
+      "readTime": "4 min read",
+      "author": {
+        "name": "Esther Howard",
+        "role": "CEO & Co-founder",
+        "avatar": "/assets/6PGmJG28Ocor0cQhAedQTirgYqQ.png"
+      },
+      "image": "/assets/WHoYrpsqgwHgbWctdeE16YIc.png",
+      "excerpt": "A deep dive into how maintaining strict visual guidelines and token consistency elevates your brand perception."
+    },
+    {
+      "slug": "the-3-website-sections-that-boost-conversions-instantly",
+      "title": "The 3 website sections that boost conversions instantly",
+      "category": "Conversions",
+      "date": "Jun 04, 2025",
+      "readTime": "5 min read",
+      "author": {
+        "name": "Bessie Cooper",
+        "role": "Growth & Partnerships Lead",
+        "avatar": "/assets/HuIjZLgkAkLMJCzYQT2link8gIk.png"
+      },
+      "image": "/assets/pizmbsxg6xlcwQD8RDZusFXPSgg.png",
+      "excerpt": "Analyzing top SaaS landing pages to uncover the 3 essential bento layouts that turn passive visitors into active trial users."
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "badge": "Testimonials",
+  "title": "Trusted by Founders",
+  "description": "See how SaaS founders and lean teams are using our AI tools to launch faster.",
+  "items": [
+    {
+      "id": "testimonial-1",
+      "author": "Rajiv Sharma",
+      "role": "QuickFlow Solo SaaS Builder",
+      "rating": 5.0,
+      "quote": "“This helped me look like a legit brand from day one. clients were impressed and 3 calls right after site launching. Great work!”",
+      "avatar": "/assets/2YnnO7XytYzigybgVjeGB0qsvzo.svg"
+    },
+    {
+      "id": "testimonial-2",
+      "author": "Alex Carter",
+      "role": "Founder at LaunchWise",
+      "rating": 5.0,
+      "quote": "“I built a site for my SaaS launch in one evening. the AI suggestions saved hours, and the design looked like I hired a top agency.”",
+      "avatar": "/assets/JOhZVi7Rr2ElH4vABwcakPIraM.svg"
+    },
+    {
+      "id": "testimonial-3",
+      "author": "Ayaan Malik",
+      "role": "Growth Strategist at StartPilot",
+      "rating": 5.0,
+      "quote": "“Finally, a site builder that doesn’t look generic. the templates are sharp, fast, to convert. ym startup’s landing page was live in a day.”",
+      "avatar": "/assets/ynCRDN2xYfbCsVzPbOzu71Olj9Y.svg"
+    },
+    {
+      "id": "testimonial-4",
+      "author": "Marcus Vance",
+      "role": "Product Lead at NovaStack",
+      "rating": 5.0,
+      "quote": "“The component architecture is pristine. Our engineering team plugged the output directly into our production repo with zero refactoring.”",
+      "avatar": "/assets/1EVBo1iEUaeeFDT0MJYwRHyYEzc.svg"
+    }
+  ]
+}
