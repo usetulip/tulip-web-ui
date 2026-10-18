@@ -19,9 +19,9 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://tulipai.com"),
-  title: "Tulip - The design layer for software that actually ships",
+  title: "Tulip - The design layer for AI-driven software",
   description:
-    "Tulip turns your product vision into a working system that powers everything from a Figma system and a production React repo, delivered in 48 hours.",
+    "Stop letting AI hallucinate your UI. Tulip pairs strict Taste Governance with real-time Model Context Protocol (MCP) streaming, pushing human-approved design tokens and component blocks directly into your AI IDE.",
   icons: {
     icon: [
       { url: "/favicon.ico" },
@@ -44,18 +44,18 @@ export const metadata: Metadata = {
   },
   manifest: "/site.webmanifest",
   openGraph: {
-    title: "Tulip - The design layer for software that actually ships",
+    title: "Tulip - The design layer for AI-driven software",
     description:
-      "Tulip turns your product vision into a working system that powers everything from a Figma system and a production React repo, delivered in 48 hours.",
+      "Stop letting AI hallucinate your UI. Tulip pairs strict Taste Governance with real-time Model Context Protocol (MCP) streaming, pushing human-approved design tokens and component blocks directly into your AI IDE.",
     images: ["/assets/q7TQ8E0Bc6qaCAnDrgp0wb3sTCg.png"],
     type: "website",
     siteName: "Tulip",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tulip - The design layer for software that actually ships",
+    title: "Tulip - The design layer for AI-driven software",
     description:
-      "Tulip turns your product vision into a working system that powers everything from a Figma system and a production React repo, delivered in 48 hours.",
+      "Stop letting AI hallucinate your UI. Tulip pairs strict Taste Governance with real-time Model Context Protocol (MCP) streaming, pushing human-approved design tokens and component blocks directly into your AI IDE.",
     images: ["/assets/q7TQ8E0Bc6qaCAnDrgp0wb3sTCg.png"],
   },
 };

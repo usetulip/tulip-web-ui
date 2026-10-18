@@ -85,7 +85,16 @@ export function HeroSection() {
                     {part}
                   </span>
                 ) : (
-                  part
+                  // Keep hyphenated words (e.g. "AI-driven") from wrapping at the hyphen
+                  part.split(/(\S+-\S+)/).map((chunk, j) =>
+                    chunk.includes('-') ? (
+                      <span key={`${i}-${j}`} className='whitespace-nowrap'>
+                        {chunk}
+                      </span>
+                    ) : (
+                      chunk
+                    ),
+                  )
                 ),
               )}
             </h1>

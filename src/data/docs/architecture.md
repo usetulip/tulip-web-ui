@@ -68,7 +68,7 @@ Add the Tulip server to your agent's MCP configuration:
 {
   "mcpServers": {
     "tulip": {
-      "url": "https://mcp.tulipai.com/v1",
+      "url": "https://mcp.usetulip.co",
       "headers": { "Authorization": "Bearer ${TULIP_API_KEY}" }
     }
   }

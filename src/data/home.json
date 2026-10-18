@@ -2,10 +2,10 @@
   "hero": {
     "badge": {
       "tag": "New",
-      "text": "Tulip for founders who ship"
+      "text": "Live MCP Integration & Taste Governance"
     },
-    "title": "The design layer for software that actually ships",
-    "description": "Tulip turns your product vision into a working system that powers everything from a Figma system and a production React repo, delivered in 48 hours.",
+    "title": "The design layer for AI-driven software.",
+    "description": "Stop letting AI hallucinate your UI. Tulip pairs strict Taste Governance with real-time Model Context Protocol (MCP) streaming, pushing human-approved design tokens and component blocks directly into your AI IDE.",
     "cta": {
       "label": "Start a sprint",
       "href": "/contact"
@@ -206,28 +206,18 @@
     "features": [
       {
         "id": "eng-1",
-        "title": "Figma Native Tokens",
-        "description": "Every layout is constructed using vetted, accessible Radix and defined UI elements. No messy, custom classes."
+        "title": "Taste Governance Engine",
+        "description": "Automated optical checks, contrast audits, and design-system drift prevention before code is ever published."
       },
       {
         "id": "eng-2",
-        "title": "Token Synchronizationfolio",
-        "description": "Your spacing, radii, and color hexes match exactly from Figma to Tailwind."
+        "title": "Real-Time MCP Sync",
+        "description": "Direct integration with mcp.usetulip.co, letting Cursor and local AI coding assistants stream approved layouts and brand tokens dynamically."
       },
       {
         "id": "eng-3",
-        "title": "Developer Ready",
-        "description": "Clean Next.js and React code structured for immediate backend integration."
-      },
-      {
-        "id": "eng-4",
-        "title": "Dark Mode Default",
-        "description": "High-contrast, sleek aesthetics built natively into your Tailwind configuration."
-      },
-      {
-        "id": "eng-5",
-        "title": "Zero Lock-in",
-        "description": "You own 100% of the Figma files and the GitHub repository."
+        "title": "Production React & Figma Alignment",
+        "description": "Guaranteed 1:1 token synchronization between your Master Figma files, Drizzle/Supabase database schema, and Next.js repositories."
       }
     ]
   },

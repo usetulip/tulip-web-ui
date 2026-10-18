@@ -6,7 +6,7 @@
     {
       "id": "faq-1",
       "question": "Do you build the backend API or database?",
-      "answer": "No. We provide the visual frontend and the React components. Your engineers handle the Postgres databases, Auth logic, and backend connections. This strict boundary is how we move so fast."
+      "answer": "Not your backend logic. Your engineers still own the API routes, auth, and business logic. What Tulip does keep in sync is the design layer: design tokens stay 1:1 across your Master Figma files, your Drizzle/Supabase database schema, and your Next.js repositories. That strict boundary is how we move so fast."
     },
     {
       "id": "faq-2",
@@ -32,6 +32,11 @@
       "id": "faq-6",
       "question": "Is Framer free to use with this template?",
       "answer": "The Next.js repository is completely self-contained and free of any subscription dependencies. You can host it on Vercel, Netlify, or AWS with zero ongoing licensing fees."
+    },
+    {
+      "id": "faq-7",
+      "question": "How does Tulip integrate with my AI coding assistant or Cursor IDE?",
+      "answer": "Tulip operates via the Model Context Protocol (MCP). Once an operator approves a component or token in our Operator Taste Dashboard, your AI development environment instantly reads those governed blocks, ensuring AI builds your application with exact brand components and zero hallucinated styling."
     }
   ]
 }
