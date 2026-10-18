@@ -1,12 +1,17 @@
 'use client';
 
 import React, { useEffect, useState, useRef } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 import homeData from '@/data/home.json';
 import { Container } from '@/components/layout/Container';
 import { SectionFrame } from '@/components/layout/SectionFrame';
 import { Zap, Layers, Palette, ChevronRight } from 'lucide-react';
+import { BriefIllustration, AuditIllustration } from '@/components/sections/home/SprintIllustrations';
+
+const visuals: Record<string, () => React.JSX.Element> = {
+  brief: BriefIllustration,
+  audit: AuditIllustration,
+};
 
 export function SprintWorkflow() {
   const { sprintWorkflow } = homeData;
@@ -44,6 +49,8 @@ export function SprintWorkflow() {
 
   const card1Data = sprintWorkflow.cards[0];
   const card2Data = sprintWorkflow.cards[1];
+  const Card1Visual = visuals[card1Data.visual];
+  const Card2Visual = visuals[card2Data.visual];
 
   return (
     <section className='relative overflow-hidden'>
@@ -85,15 +92,7 @@ export function SprintWorkflow() {
                 {/* Left: Visual Asset */}
                 <div className='lg:col-span-6 w-full flex items-center justify-center'>
                   <div className='relative w-full max-w-[440px] aspect-[4/3] rounded-2xl bg-white/90 shadow-sm border border-white/80 overflow-hidden flex items-center justify-center'>
-                    <div className='relative w-full h-full'>
-                      <Image
-                        src={card1Data.image}
-                        alt={card1Data.title}
-                        fill
-                        className='object-contain'
-                        sizes='(max-width: 768px) 100vw, 440px'
-                      />
-                    </div>
+                    <Card1Visual />
                   </div>
                 </div>
 
@@ -159,15 +158,7 @@ export function SprintWorkflow() {
                 {/* Right: Visual Asset */}
                 <div className='lg:col-span-6 w-full flex items-center justify-center order-1 lg:order-2'>
                   <div className='relative w-full max-w-[440px] aspect-[4/3] rounded-2xl bg-white/90 shadow-sm border border-white/80 overflow-hidden flex items-center justify-center'>
-                    <div className='relative w-full h-full'>
-                      <Image
-                        src={card2Data.image}
-                        alt={card2Data.title}
-                        fill
-                        className='object-contain'
-                        sizes='(max-width: 768px) 100vw, 440px'
-                      />
-                    </div>
+                    <Card2Visual />
                   </div>
                 </div>
               </div>

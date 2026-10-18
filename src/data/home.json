@@ -185,7 +185,7 @@
           "label": "View the Brief Wizard",
           "href": "#pricing"
         },
-        "image": "/assets/handle-ui-dna.png"
+        "visual": "brief"
       },
       {
         "phase": "HOUR 48",
@@ -195,7 +195,7 @@
           "label": "See the Output Repo",
           "href": "#pricing"
         },
-        "image": "/assets/48-hour.png"
+        "visual": "audit"
       }
     ]
   },
