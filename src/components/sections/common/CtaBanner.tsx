@@ -16,7 +16,7 @@ export function CtaBanner() {
         {withAccent(ctaBanner.title, ctaBanner.accent)}
       </h2>
       <p className='mx-auto mt-6 max-w-md text-[16px] leading-relaxed text-ink/70'>{ctaBanner.description}</p>
-      <ApplyButton className='mt-9 inline-flex items-center gap-2 rounded-full bg-[#f97518] px-6 py-3 text-sm font-semibold text-ink transition-colors hover:bg-[#e65f00] cursor-pointer'>
+      <ApplyButton className='mt-9 inline-flex items-center gap-2 rounded-full bg-[#f97518] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#e65f00] cursor-pointer'>
         {ctaBanner.cta.label}
         <ArrowUpRight className='h-4 w-4' aria-hidden='true' />
       </ApplyButton>

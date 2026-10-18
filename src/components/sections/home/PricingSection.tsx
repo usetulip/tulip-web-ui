@@ -46,7 +46,7 @@ export function PricingSection() {
                 tier={plan.name}
                 className={`flex w-full items-center justify-center gap-2 rounded-full px-4 py-3 text-sm font-semibold transition-colors cursor-pointer ${
                   plan.popular
-                    ? 'bg-[#f97518] text-ink hover:bg-[#e65f00]'
+                    ? 'bg-[#f97518] text-white hover:bg-[#e65f00]'
                     : 'border border-rule text-ink hover:border-ink'
                 }`}
               >

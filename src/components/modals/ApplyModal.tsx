@@ -352,7 +352,7 @@ function ApplyModal({
               <button
                 type='submit'
                 disabled={status === 'submitting'}
-                className='mt-7 flex w-full items-center justify-center gap-2 rounded-full bg-[#f97518] px-6 py-3.5 text-sm font-semibold text-ink transition-colors hover:bg-[#e65f00] disabled:cursor-wait disabled:opacity-80'
+                className='mt-7 flex w-full items-center justify-center gap-2 rounded-full bg-[#f97518] px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#e65f00] disabled:cursor-wait disabled:opacity-80'
               >
                 {status === 'submitting' ? (
                   <>

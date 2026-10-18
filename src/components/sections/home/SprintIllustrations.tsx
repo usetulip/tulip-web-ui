@@ -142,7 +142,7 @@ export function BriefIllustration() {
         5-minute intake
       </text>
       <rect x='262' y='247' width='98' height='24' rx='12' fill={ORANGE} />
-      <text x='311' y='263' fontSize='11' fontWeight='700' fill={INK} textAnchor='middle'>
+      <text x='311' y='263' fontSize='11' fontWeight='700' fill='#fff' textAnchor='middle'>
         Submit brief →
       </text>
     </Canvas>
