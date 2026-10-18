@@ -31,23 +31,8 @@ export function SmoothScrollProvider({ children }: { children: React.ReactNode }
 
     rafId = requestAnimationFrame(raf);
 
-    // Subtle parallax depth effect on ambient background glows
-    const handleScroll = ({ scroll }: { scroll: number }) => {
-      const pinkGlow = document.querySelector(".ambient-glow-pink") as HTMLElement;
-      const coralGlow = document.querySelector(".ambient-glow-coral") as HTMLElement;
-      if (pinkGlow) {
-        pinkGlow.style.transform = `translate3d(0px, ${scroll * 0.18}px, 0px)`;
-      }
-      if (coralGlow) {
-        coralGlow.style.transform = `translate3d(0px, ${-scroll * 0.12}px, 0px)`;
-      }
-    };
-
-    lenis.on("scroll", handleScroll);
-
     return () => {
       cancelAnimationFrame(rafId);
-      lenis.off("scroll", handleScroll);
       lenis.destroy();
     };
   }, []);

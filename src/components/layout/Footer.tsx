@@ -2,10 +2,9 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import footerData from '@/data/footer.json';
-import { Container } from '@/components/layout/Container';
-import { ChevronRight, Check, Linkedin } from 'lucide-react';
+import { FooterLandscape } from '@/components/layout/FooterLandscape';
+import { ArrowUpRight, Check, Linkedin } from 'lucide-react';
 
 function XIcon({ className }: { className?: string }) {
   return (
@@ -39,144 +38,89 @@ export function Footer() {
   };
 
   return (
-    <footer className='w-full pt-16 pb-12 bg-transparent relative overflow-hidden'>
-      <Container>
-        {/* Main Footer Grid */}
-        <div className='grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-10 pb-14'>
-          {/* Brand & Description & Socials (4 columns) */}
-          <div className='md:col-span-4 flex flex-col justify-between'>
-            <div>
-              {/* Logo */}
-              <Link href='/' className='flex items-center gap-2 mb-4 group'>
-                <div className='relative h-6 w-6 sm:h-7 sm:w-7 shrink-0'>
-                  <Image
-                    src='/logo.png'
-                    alt='Tulip Logo'
-                    fill
-                    className='object-contain'
-                  />
-                </div>
-                <span className='text-xl sm:text-2xl font-bold tracking-tight text-[#1e0d01] font-heading'>
-                  {footerData.brand.name}
-                </span>
+    <footer className='relative w-full overflow-hidden'>
+      <FooterLandscape className='absolute inset-x-0 bottom-0 h-[clamp(360px,42vw,600px)] w-full' />
+
+      <div className='relative mx-auto max-w-[1200px] px-4 sm:px-6 pt-4 pb-[clamp(200px,24vw,340px)]'>
+        <div className='rounded-[22px] bg-white/95 backdrop-blur-sm px-6 sm:px-10 pt-10 pb-6 text-ink'>
+          <div className='grid grid-cols-12 gap-x-6 gap-y-10'>
+            {/* Brand */}
+            <div className='col-span-12 lg:col-span-5'>
+              <Link href='/' className='font-serif text-[2.4rem] leading-none tracking-[-0.02em] text-ink'>
+                tulip
               </Link>
-
-              <p className='text-sm text-[#1e0d01]/70 max-w-sm leading-relaxed mb-6'>
-                {footerData.brand.description}
-              </p>
+              <p className='mt-4 max-w-sm text-sm leading-relaxed text-ink/65'>{footerData.brand.description}</p>
+              <div className='mt-6 flex items-center gap-2'>
+                {footerData.socials.map((social) => (
+                  <a
+                    key={social.name}
+                    href={social.href}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    aria-label={social.name}
+                    className='flex h-9 w-9 items-center justify-center rounded-full border border-rule text-ink/75 hover:border-ink hover:text-ink transition-colors'
+                  >
+                    {getSocialIcon(social.icon || social.name)}
+                  </a>
+                ))}
+              </div>
             </div>
 
-            {/* Social Links */}
-            <div className='flex items-center gap-2.5'>
-              {footerData.socials.map((social) => (
-                <a
-                  key={social.name}
-                  href={social.href}
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='flex h-9 w-9 items-center justify-center rounded-full bg-white/90 border border-[rgba(30,13,1,0.08)] text-neutral-600 hover:text-[#f97518] hover:border-[#f97518]/40 hover:bg-white transition-all shadow-2xs shrink-0'
-                  aria-label={social.name}
-                >
-                  {getSocialIcon(social.icon || social.name)}
-                </a>
-              ))}
-            </div>
-          </div>
+            {/* Link columns */}
+            {footerData.columns.map((column) => (
+              <nav key={column.title} aria-label={column.title} className='col-span-6 sm:col-span-4 lg:col-span-2'>
+                <h4 className='text-sm font-semibold text-ink'>{column.title}</h4>
+                <ul className='mt-4 space-y-2.5'>
+                  {column.links.map((link) => (
+                    <li key={link.label}>
+                      <Link href={link.href} className='text-sm text-ink/65 hover:text-ink transition-colors'>
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            ))}
 
-          {/* First Link Column (2 columns) */}
-          <div className='md:col-span-2 flex flex-col space-y-3.5'>
-            <h4 className='text-base font-bold text-[#1e0d01] font-heading tracking-tight'>
-              {footerData.columns[0]?.title || 'Product'}
-            </h4>
-            <ul className='space-y-2.5 text-sm text-[#1e0d01]/70'>
-              {footerData.columns[0]?.links.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className='hover:text-[#f97518] transition-colors'
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Second Link Column (2 columns) */}
-          <div className='md:col-span-2 flex flex-col space-y-3.5'>
-            <h4 className='text-base font-bold text-[#1e0d01] font-heading tracking-tight'>
-              {footerData.columns[1]?.title || 'Company'}
-            </h4>
-            <ul className='space-y-2.5 text-sm text-[#1e0d01]/70'>
-              {footerData.columns[1]?.links.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className='hover:text-[#f97518] transition-colors'
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Newsletter Form (4 columns) */}
-          <div className='md:col-span-4 flex flex-col space-y-3 min-w-0'>
-            <h4 className='text-base font-bold text-[#1e0d01] font-heading tracking-tight'>
-              {footerData.newsletter.title}
-            </h4>
-            <p className='text-sm text-[#1e0d01]/70 leading-relaxed max-w-sm'>
-              {footerData.newsletter.description}
-            </p>
-
-            {/* Pill Search / Subscribe Input */}
-            <form onSubmit={handleSubmit} className='pt-2 w-full'>
-              <div className='w-full rounded-full bg-white/90 border border-[rgba(30,13,1,0.08)] p-1.5 pl-4 flex items-center justify-between shadow-2xs focus-within:border-[#f97518]/40 transition-all box-border overflow-hidden'>
+            {/* Newsletter */}
+            <div className='col-span-12 sm:col-span-4 lg:col-span-3'>
+              <h4 className='text-sm font-semibold text-ink'>{footerData.newsletter.title}</h4>
+              <p className='mt-4 text-sm leading-relaxed text-ink/65'>{footerData.newsletter.description}</p>
+              <form onSubmit={handleSubmit} className='mt-4 flex items-center rounded-full border border-rule bg-paper p-1 pl-4 focus-within:border-ink/40'>
+                <label htmlFor='footer-email' className='sr-only'>Email address</label>
                 <input
+                  id='footer-email'
                   type='email'
                   required
                   placeholder={footerData.newsletter.placeholder}
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className='min-w-0 flex-1 bg-transparent text-xs sm:text-sm text-[#1e0d01] placeholder:text-neutral-400 outline-none pr-2'
+                  className='min-w-0 flex-1 bg-transparent py-1.5 text-sm text-ink placeholder:text-ink/40 outline-none'
                 />
                 <button
                   type='submit'
-                  className='rounded-full bg-[#f97518] hover:bg-[#e65f00] text-[#1e0d01] px-4 py-2 text-xs font-bold shadow-xs flex items-center gap-1 shrink-0 transition-all cursor-pointer whitespace-nowrap'
+                  className='flex items-center gap-1 rounded-full bg-ink px-3.5 py-1.5 text-xs font-medium text-paper hover:bg-ink/85 transition-colors cursor-pointer'
                 >
-                  <span>
-                    {subscribed
-                      ? 'Subscribed'
-                      : footerData.newsletter.buttonText}
-                  </span>
-                  {subscribed ? (
-                    <Check className='h-3.5 w-3.5 stroke-[2.5]' />
-                  ) : (
-                    <ChevronRight className='h-3.5 w-3.5 stroke-[2.5]' />
-                  )}
+                  {subscribed ? 'Subscribed' : footerData.newsletter.buttonText}
+                  {subscribed ? <Check className='h-3.5 w-3.5' /> : <ArrowUpRight className='h-3.5 w-3.5' />}
                 </button>
-              </div>
-            </form>
+              </form>
+            </div>
+          </div>
+
+          {/* Bottom bar */}
+          <div className='mt-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 border-t border-rule pt-5 text-[13px] text-ink/55'>
+            <p>{footerData.brand.copyright}</p>
+            <nav aria-label='Legal' className='flex items-center gap-5'>
+              {footerData.legal.map((link) => (
+                <Link key={link.href} href={link.href} className='hover:text-ink transition-colors'>
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
           </div>
         </div>
-
-        {/* Bottom Credits & Copyright Card */}
-        <div className='rounded-2xl bg-white/80 backdrop-blur-sm px-6 py-4 border border-[rgba(30,13,1,0.06)] flex flex-col sm:flex-row items-center justify-between gap-3 text-xs sm:text-sm text-neutral-500 shadow-2xs'>
-          <p>{footerData.brand.copyright}</p>
-          <nav aria-label='Legal' className='flex items-center gap-5'>
-            {footerData.legal.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className='hover:text-[#f97518] transition-colors'
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-        </div>
-      </Container>
+      </div>
     </footer>
   );
 }

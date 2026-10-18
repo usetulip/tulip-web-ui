@@ -2,9 +2,8 @@
 
 import React, { useEffect, useState, useRef } from "react";
 import homeData from "@/data/home.json";
-import { Container } from "@/components/layout/Container";
-import { SectionFrame } from "@/components/layout/SectionFrame";
-import { Zap, Check, X, ShieldCheck, Figma, Database, Code2 } from "lucide-react";
+import { SectionHead } from "@/components/layout/SectionHead";
+import { Check, X, ShieldCheck, Figma, Database, Code2 } from "lucide-react";
 
 const governanceChecks = [
   { label: "Contrast (WCAG AA)", detail: "4.8:1", passed: true },
@@ -64,14 +63,12 @@ export function EngineSection() {
       cardRefs.current[id] = el;
     },
     "data-card-id": id,
-    className: `rounded-[2rem] bg-[#fbfbfb] border border-[rgba(30,13,1,0.08)] p-6 sm:p-9 shadow-xs overflow-hidden transition-all duration-700 ease-out ${extraClassName} ${
-      inViewMap[id] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12 pointer-events-none"
-    }`,
+    className: `rounded-[22px] bg-white p-6 sm:p-9 overflow-hidden ${extraClassName}`,
   });
 
   const featureCopy = (feature: { title: string; description: string }) => (
     <div>
-      <h3 className="text-xl sm:text-2xl font-bold text-[#1e0d01] font-heading mb-2 leading-snug">
+      <h3 className="text-xl sm:text-2xl font-semibold tracking-[-0.02em] text-ink mb-2 leading-snug">
         {feature.title}
       </h3>
       <p className="text-sm sm:text-base text-[#1e0d01]/70 leading-relaxed">{feature.description}</p>
@@ -79,33 +76,17 @@ export function EngineSection() {
   );
 
   return (
-    <section id="engine" className="relative overflow-hidden">
-      <SectionFrame showTopBorder={true} showBottomBorder={false} showCorners={true}>
-        <Container className="py-14 md:py-20">
-          {/* Header */}
-          <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-14 md:mb-20">
-            {/* Tag / Badge */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-[rgba(30,13,1,0.08)] bg-white px-3.5 py-1 shadow-sm mb-6">
-              <Zap className="h-3.5 w-3.5 text-[#f97518] fill-[#f97518]" />
-              <span className="text-xs sm:text-sm font-medium text-[#1e0d01]/80">
-                {engine.badge}
-              </span>
-            </div>
+    <section id="engine" aria-label={engine.title}>
+      <SectionHead title={engine.title} accent={engine.accent}>
+        <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-ink/70">{engine.description}</p>
+      </SectionHead>
 
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#1e0d01] font-heading mb-4 leading-tight">
-              {engine.title}
-            </h2>
-            <p className="text-base sm:text-lg text-[#1e0d01]/70 leading-relaxed max-w-2xl">
-              {engine.description}
-            </p>
-          </div>
-
-          {/* Grid Layout: Row 1 (2 cards: 7/5 cols), Row 2 (1 wide card) */}
-          <div className="space-y-6 md:space-y-8">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8">
+          {/* Grid Layout: Row 1 (2 cells: 7/5 cols), Row 2 (1 wide cell) */}
+          <div className="grid gap-4 px-5 sm:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
               {/* Pillar 1: Taste Governance Engine */}
               <div {...revealProps("card-0", "lg:col-span-7 flex flex-col justify-between")}>
-                <div className="relative w-full rounded-2xl bg-neutral-100/60 p-5 sm:p-7 border border-neutral-200/50 mb-8 overflow-hidden">
+                <div className="relative w-full rounded-2xl bg-paper p-5 sm:p-7 mb-8 overflow-hidden">
                   <div className="rounded-2xl bg-white p-4 sm:p-5 shadow-sm border border-neutral-200/60">
                     <div className="flex items-center justify-between mb-4">
                       <div className="flex items-center gap-2 text-sm font-semibold text-[#1e0d01]">
@@ -151,8 +132,8 @@ export function EngineSection() {
               </div>
 
               {/* Pillar 2: Real-Time MCP Sync */}
-              <div {...revealProps("card-1", "delay-100 lg:col-span-5 flex flex-col justify-between")}>
-                <div className="relative w-full rounded-2xl bg-[#1e0d01] p-4 sm:p-5 border border-[#1e0d01] mb-8 overflow-hidden font-mono">
+              <div {...revealProps("card-1", "lg:col-span-5 flex flex-col justify-between")}>
+                <div className="relative w-full rounded-2xl bg-[#1e0d01] p-4 sm:p-5 mb-8 overflow-hidden font-mono">
                   <div className="flex items-center gap-1.5 mb-4">
                     <span className="h-2 w-2 rounded-full bg-[#ff5f57]" />
                     <span className="h-2 w-2 rounded-full bg-[#febc2e]" />
@@ -195,7 +176,7 @@ export function EngineSection() {
             <div {...revealProps("card-2", "grid grid-cols-1 lg:grid-cols-12 gap-8 items-center")}>
               <div className="lg:col-span-5 lg:order-1 order-2">{featureCopy(alignment)}</div>
 
-              <div className="lg:col-span-7 lg:order-2 order-1 rounded-2xl bg-neutral-100/60 p-5 sm:p-7 border border-neutral-200/50 overflow-hidden">
+              <div className="lg:col-span-7 lg:order-2 order-1 rounded-2xl bg-paper p-5 sm:p-7 overflow-hidden">
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
                   {alignmentNodes.map(({ icon: Icon, label, detail }, i) => (
                     <React.Fragment key={label}>
@@ -236,8 +217,6 @@ export function EngineSection() {
               </div>
             </div>
           </div>
-        </Container>
-      </SectionFrame>
     </section>
   );
 }

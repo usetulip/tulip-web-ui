@@ -27,6 +27,13 @@ export default {
           foreground: "var(--muted-foreground)",
         },
         border: "var(--border)",
+        // Channel-based so opacity modifiers like text-ink/60 work
+        paper: {
+          DEFAULT: "rgb(var(--paper-rgb) / <alpha-value>)",
+          deep: "rgb(var(--paper-deep-rgb) / <alpha-value>)",
+        },
+        ink: "rgb(var(--ink-rgb) / <alpha-value>)",
+        rule: "var(--rule)",
         accent: {
           DEFAULT: "var(--accent)",
           foreground: "var(--accent-foreground)",
@@ -43,8 +50,9 @@ export default {
         }
       },
       fontFamily: {
-        sans: ["var(--font-geist-sans)", "sans-serif"],
-        heading: ["var(--font-geist-sans)", "sans-serif"],
+        sans: ["var(--font-archivo)", "sans-serif"],
+        heading: ["var(--font-archivo)", "sans-serif"],
+        serif: ["var(--font-newsreader)", "Georgia", "serif"],
         mono: ["var(--font-geist-mono)", "monospace"],
       },
       borderRadius: {

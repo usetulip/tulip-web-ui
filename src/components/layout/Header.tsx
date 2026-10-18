@@ -5,8 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import navigationData from '@/data/navigation.json';
-import { Container } from '@/components/layout/Container';
-import { ChevronRight, Menu, X } from 'lucide-react';
+import { ArrowUpRight, Menu, X } from 'lucide-react';
 
 function scrollToTarget(target: string | number) {
   const lenis = (window as unknown as { __lenis?: { scrollTo: (t: string | number, o?: object) => void } }).__lenis;
@@ -54,109 +53,82 @@ export function Header() {
   };
 
   return (
-    <header className='relative z-50 w-full bg-transparent'>
-      <div className='py-4 sm:py-5'>
-        <Container>
-          <div className='grid grid-cols-[1fr_auto_1fr] items-center gap-4'>
-            {/* Logo */}
-            <Link
-              href='/'
-              onClick={(e) => handleNavClick(e, '/')}
-              className='flex items-center gap-2 group justify-self-start shrink-0'
-            >
-              <div className='relative h-6 w-6 sm:h-7 sm:w-7 shrink-0'>
-                <Image
-                  src='/logo.png'
-                  alt='Tulip Logo'
-                  fill
-                  className='object-contain'
-                  priority
-                />
-              </div>
-              <span className='text-xl sm:text-2xl font-bold tracking-tight text-[#1e0d01] font-heading'>
-                Tulip
-              </span>
-            </Link>
+    <header className='relative z-50 w-full'>
+      <div className='mx-auto max-w-[1280px]'>
+        <div className='grid grid-cols-[1fr_auto] md:grid-cols-[1fr_auto_1fr] items-center gap-4 px-5 sm:px-8 h-16'>
+          {/* Logo */}
+          <Link
+            href='/'
+            onClick={(e) => handleNavClick(e, '/')}
+            className='flex items-center gap-2 justify-self-start'
+          >
+            <span className='relative h-5 w-5 shrink-0'>
+              <Image src='/logo.png' alt='' fill className='object-contain' priority />
+            </span>
+            <span className='font-serif text-[1.4rem] leading-none tracking-[-0.01em] text-ink'>tulip</span>
+          </Link>
 
-            {/* Desktop Navigation — centered */}
-            <nav className='hidden md:flex items-center gap-5 lg:gap-8'>
-              {links.map((link, idx) => {
-                const label =
-                  'label' in link ? link.label : (link as any).title;
-                const href = link.href;
-
-                return (
-                  <Link
-                    key={idx}
-                    href={href}
-                    onClick={(e) => handleNavClick(e, href)}
-                    className='text-xs lg:text-sm font-medium text-[#1e0d01]/80 hover:text-[#1e0d01] transition-colors py-2'
-                  >
-                    {label}
-                  </Link>
-                );
-              })}
-            </nav>
-
-            {/* Desktop CTA + Mobile toggle */}
-            <div className='justify-self-end flex items-center shrink-0'>
+          {/* Desktop navigation */}
+          <nav aria-label='Main' className='hidden md:flex items-center gap-6 lg:gap-8'>
+            {links.map((link) => (
               <Link
-                href='/contact'
-                className='hidden md:flex items-center gap-1.5 rounded-full bg-white hover:bg-white/90 px-4 lg:px-4.5 py-2 text-xs lg:text-sm font-semibold text-[#1e0d01] shadow-xs border border-[rgba(30,13,1,0.06)] hover:shadow-sm transition-all whitespace-nowrap'
+                key={link.href}
+                href={link.href}
+                onClick={(e) => handleNavClick(e, link.href)}
+                className='text-sm text-ink/70 hover:text-ink transition-colors'
               >
-                <span>Start a Sprint</span>
-                <ChevronRight className='h-3.5 w-3.5 stroke-[2.5]' />
+                {link.label}
               </Link>
-
-              <button
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className='md:hidden flex h-10 w-10 items-center justify-center rounded-xl bg-white/80 border border-neutral-200 text-[#1e0d01] shrink-0'
-                aria-label='Toggle navigation menu'
-              >
-                {mobileMenuOpen ? (
-                  <X className='h-5 w-5' />
-                ) : (
-                  <Menu className='h-5 w-5' />
-                )}
-              </button>
-            </div>
-          </div>
-        </Container>
-      </div>
-
-      {/* Mobile Drawer */}
-      {mobileMenuOpen && (
-        <div className='md:hidden border-b border-neutral-200/80 bg-white/95 backdrop-blur-md px-6 py-6 space-y-4 shadow-xl'>
-          <nav className='flex flex-col space-y-3.5'>
-            {links.map((link, idx) => {
-              const label = 'label' in link ? link.label : (link as any).title;
-              const href = link.href;
-
-              return (
-                <Link
-                  key={idx}
-                  href={href}
-                  onClick={(e) => handleNavClick(e, href)}
-                  className='text-sm font-semibold text-[#1e0d01] hover:text-[#f97518] py-1 transition-colors'
-                >
-                  {label}
-                </Link>
-              );
-            })}
+            ))}
           </nav>
 
-          <div className='pt-4 border-t border-neutral-100 flex flex-col gap-2.5'>
+          {/* CTA + mobile toggle */}
+          <div className='justify-self-end flex items-center gap-2'>
+            <Link
+              href='/contact'
+              className='hidden sm:inline-flex items-center gap-1.5 rounded-full bg-ink px-4 py-2 text-sm font-medium text-paper hover:bg-ink/85 transition-colors'
+            >
+              Start a sprint
+              <ArrowUpRight className='h-3.5 w-3.5' />
+            </Link>
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className='md:hidden flex h-9 w-9 items-center justify-center rounded-full border border-rule text-ink'
+              aria-label='Toggle navigation menu'
+              aria-expanded={mobileMenuOpen}
+            >
+              {mobileMenuOpen ? <X className='h-4 w-4' /> : <Menu className='h-4 w-4' />}
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile drawer */}
+        {mobileMenuOpen && (
+          <nav aria-label='Main' className='md:hidden border-t border-rule px-5 py-4'>
+            <ul className='divide-y divide-rule'>
+              {links.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    onClick={(e) => handleNavClick(e, link.href)}
+                    className='block py-3 font-serif text-2xl text-ink'
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
             <Link
               href='/contact'
               onClick={() => setMobileMenuOpen(false)}
-              className='flex items-center justify-center gap-1.5 rounded-full bg-white py-2.5 text-xs font-bold text-[#1e0d01] shadow-xs border border-neutral-200'
+              className='mt-3 flex items-center justify-center gap-1.5 rounded-full bg-ink py-3 text-sm font-medium text-paper'
             >
-              <span>Start a Sprint</span>
-              <ChevronRight className='h-3.5 w-3.5 stroke-[2.5]' />
+              Start your 48-hour sprint
+              <ArrowUpRight className='h-4 w-4' />
             </Link>
-          </div>
-        </div>
-      )}
+          </nav>
+        )}
+      </div>
     </header>
   );
 }

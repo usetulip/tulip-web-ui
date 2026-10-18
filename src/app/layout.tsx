@@ -1,15 +1,22 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Archivo, Geist_Mono, Newsreader } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { DashedGuides } from "@/components/layout/DashedGuides";
-import { AmbientBackground } from "@/components/layout/AmbientBackground";
 import { SmoothScrollProvider } from "@/components/providers/SmoothScrollProvider";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+// Newsreader (light, with italics) sets the display type, Archivo carries body copy,
+// Geist Mono is reserved for spec callouts and token values.
+const archivo = Archivo({
+  variable: "--font-archivo",
   subsets: ["latin"],
+  axes: ["wdth"],
+});
+
+const newsreader = Newsreader({
+  variable: "--font-newsreader",
+  subsets: ["latin"],
+  style: ["normal", "italic"],
 });
 
 const geistMono = Geist_Mono({
@@ -66,13 +73,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body className="font-sans min-h-screen relative flex flex-col justify-between selection:bg-[#f97518]/20 selection:text-[#f97518] antialiased">
+    <html lang="en" className={`${archivo.variable} ${newsreader.variable} ${geistMono.variable}`}>
+      <body className="font-sans min-h-screen relative flex flex-col justify-between selection:bg-[#f97518] selection:text-[#1e0d01] antialiased">
         <SmoothScrollProvider>
-          <AmbientBackground />
-          <DashedGuides />
           <Header />
-          <main className="flex-1 relative z-10">{children}</main>
+          <main className="flex-1 relative z-10">
+            <div className="page-frame">{children}</div>
+          </main>
           <Footer />
         </SmoothScrollProvider>
       </body>

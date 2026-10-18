@@ -1,6 +1,6 @@
 {
   "badge": "FAQs",
-  "title": "Frequently Asked Questions",
+  "title": "Before you start.",
   "description": "Answers to the questions teams ask before their first sprint.",
   "items": [
     {
@@ -38,5 +38,6 @@
       "question": "How does Tulip integrate with my AI coding assistant or Cursor IDE?",
       "answer": "Tulip operates via the Model Context Protocol (MCP). Once an operator approves a component or token in our Operator Taste Dashboard, your AI development environment instantly reads those governed blocks, ensuring AI builds your application with exact brand components and zero hallucinated styling."
     }
-  ]
+  ],
+  "accent": "start."
 }

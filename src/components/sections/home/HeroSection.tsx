@@ -1,186 +1,143 @@
-'use client';
-
-import React, { useEffect, useState, useRef } from 'react';
-import Image from 'next/image';
+import React from 'react';
 import Link from 'next/link';
+import { ArrowUpRight } from 'lucide-react';
 import homeData from '@/data/home.json';
-import { Container } from '@/components/layout/Container';
-import { CornerDot } from '@/components/layout/SectionFrame';
-import { TasteDashboardDemo } from '@/components/sections/home/TasteDashboardDemo';
-import { Button } from '@/components/ui/button';
-import { ChevronRight, Star } from 'lucide-react';
+import { TulipAscii } from '@/components/sections/home/TulipAscii';
+
+// Callout geometry on a 1080x600 stage. The tulip fills the stage height, centered.
+// Anchors sit a little inside the petal and leaf edges so they stay on the flower as it turns.
+// anchor: point on the flower; elbow: where the leader line turns; box: label's top-left.
+const STAGE = { w: 1080, h: 600 };
+const BOX_W = 214;
+const GEOMETRY: Record<string, { anchor: [number, number]; elbow: [number, number]; box: [number, number]; side: 'left' | 'right' }> = {
+  color: { anchor: [505, 160], elbow: [440, 118], box: [56, 96], side: 'left' },
+  radius: { anchor: [494, 404], elbow: [430, 402], box: [56, 380], side: 'left' },
+  contrast: { anchor: [612, 200], elbow: [700, 162], box: [810, 140], side: 'right' },
+  mcp: { anchor: [586, 462], elbow: [690, 452], box: [810, 430], side: 'right' },
+};
+
+function Callout({ label, value, note }: { label: string; value: string; note: string }) {
+  return (
+    <div className='rounded-[4px] border border-ink/80 bg-white/85 backdrop-blur-sm text-left'>
+      <p className='truncate border-b border-ink/15 px-3 py-1.5 font-mono text-[10.5px] text-ink/70'>{label}</p>
+      <div className='px-3 py-2'>
+        <p className='font-serif text-[1.05rem] sm:text-[1.35rem] leading-tight text-ink'>{value}</p>
+        <p className='mt-0.5 hidden sm:block text-[11.5px] text-ink/60'>{note}</p>
+      </div>
+    </div>
+  );
+}
 
 export function HeroSection() {
   const { hero } = homeData;
-  const imageContainerRef = useRef<HTMLDivElement>(null);
-  const [scrollProgress, setScrollProgress] = useState(0);
-
-  useEffect(() => {
-    let animationFrameId: number;
-
-    const handleScroll = () => {
-      if (!imageContainerRef.current) return;
-      const rect = imageContainerRef.current.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-
-      const start = windowHeight;
-      const end = windowHeight * 0.15;
-      const current = rect.top;
-
-      const rawProgress = Math.min(
-        Math.max((start - current) / (start - end), 0),
-        1,
-      );
-
-      const easedProgress = 1 - Math.pow(1 - rawProgress, 2.5);
-      setScrollProgress(easedProgress);
-    };
-
-    const onScroll = () => {
-      cancelAnimationFrame(animationFrameId);
-      animationFrameId = requestAnimationFrame(handleScroll);
-    };
-
-    window.addEventListener('scroll', onScroll, { passive: true });
-    handleScroll();
-
-    return () => {
-      window.removeEventListener('scroll', onScroll);
-      cancelAnimationFrame(animationFrameId);
-    };
-  }, []);
-
-  const initialScale = 0.8677777;
-  const scale = initialScale + scrollProgress * (1 - initialScale);
-  const translateY = (1 - scrollProgress) * 30;
+  const [before, after] = hero.title.split('AI-driven');
 
   return (
-    <section className='relative overflow-hidden'>
-      <div className='relative w-full max-w-[1240px] mx-auto'>
-        {/* Top Horizontal Dashed Line with Corner Dots */}
-        <div className='relative w-full'>
-          <div className='w-full h-[1px] border-t border-dashed border-[rgba(30,13,1,0.14)]' />
-          <CornerDot position='top-left' />
-          <CornerDot position='top-right' />
+    <section aria-labelledby='hero-title' className='relative overflow-hidden px-5 sm:px-8 pt-8 md:pt-14 pb-24'>
+      <p className='flex items-center justify-center gap-2 text-[13px] text-ink/70'>
+        <span className='h-1.5 w-1.5 rounded-full bg-[#f97518]' aria-hidden='true' />
+        {hero.badge.text}
+      </p>
+
+      <h1
+        id='hero-title'
+        className='mx-auto mt-6 max-w-5xl text-center font-serif font-light text-[clamp(2.9rem,7.4vw,6.75rem)] leading-[0.96] tracking-[-0.025em] text-ink'
+      >
+        {before}
+        <em className='italic whitespace-nowrap'>AI-driven</em>
+        {after}
+      </h1>
+
+      {/* Desktop: annotated specimen */}
+      <div className='relative mx-auto mt-4 hidden lg:block max-w-[1080px] aspect-[1080/600]'>
+        {/* Centering lives on the wrapper so the load animation's transform can't override it */}
+        <div className='absolute inset-y-0 left-1/2 -translate-x-1/2'>
+          <TulipAscii className='animate-tulip h-full aspect-[400/520]' />
         </div>
 
-        {/* Hero Main Content */}
-        <Container>
-          <div className='flex flex-col items-center text-center max-w-4xl mx-auto pt-10 sm:pt-14 pb-8'>
-            {/* Tag / Badge */}
-            <div className='inline-flex items-center gap-2 rounded-full border border-[rgba(30,13,1,0.08)] bg-white/90 backdrop-blur-md pl-1 pr-3 py-1 shadow-sm mb-7'>
-              <span className='flex items-center gap-1.5 rounded-full bg-[#f97518]/15 px-2.5 py-0.5 text-xs font-bold text-[#f97518]'>
-                <span className='h-1.5 w-1.5 rounded-full bg-[#f97518]' />
-                {hero.badge.tag}
-              </span>
-              <span className='text-xs sm:text-sm font-medium text-[#1e0d01]/80 pr-1'>
-                {hero.badge.text}
-              </span>
+        <svg
+          viewBox={`0 0 ${STAGE.w} ${STAGE.h}`}
+          className='pointer-events-none absolute inset-0 h-full w-full'
+          aria-hidden='true'
+        >
+          {hero.callouts.map((c, i) => {
+            const g = GEOMETRY[c.id];
+            const end = g.side === 'left' ? g.box[0] + BOX_W : g.box[0];
+            const y = g.box[1] + 22;
+            return (
+              <g key={c.id}>
+                <polyline
+                  points={`${g.anchor.join(',')} ${g.elbow[0]},${y} ${end},${y}`}
+                  fill='none'
+                  stroke='#1e0d01'
+                  strokeOpacity='0.55'
+                  strokeWidth='1'
+                  vectorEffect='non-scaling-stroke'
+                  pathLength={1}
+                  className='animate-callout-line'
+                  style={{ animationDelay: `${700 + i * 140}ms` }}
+                />
+                <rect
+                  x={g.anchor[0] - 4}
+                  y={g.anchor[1] - 4}
+                  width='8'
+                  height='8'
+                  fill='#fff'
+                  stroke='#1e0d01'
+                  strokeWidth='1.25'
+                  vectorEffect='non-scaling-stroke'
+                />
+              </g>
+            );
+          })}
+        </svg>
+
+        {hero.callouts.map((c, i) => {
+          const g = GEOMETRY[c.id];
+          return (
+            <div
+              key={c.id}
+              className='animate-callout absolute'
+              style={{
+                left: `${(g.box[0] / STAGE.w) * 100}%`,
+                top: `${(g.box[1] / STAGE.h) * 100}%`,
+                width: `${(BOX_W / STAGE.w) * 100}%`,
+                animationDelay: `${1100 + i * 140}ms`,
+              }}
+            >
+              <Callout label={c.label} value={c.value} note={c.note} />
             </div>
+          );
+        })}
+      </div>
 
-            {/* Headline with dynamic highlight */}
-            <h1 className='text-4xl sm:text-5xl md:text-6xl lg:text-[68px] font-bold tracking-tight text-[#1e0d01] font-heading leading-[1.12] mb-6 max-w-4xl'>
-              {hero.title.split(/(design)/i).map((part, i) =>
-                part.toLowerCase() === 'design' ? (
-                  <span key={i} className='text-[#f97518]'>
-                    {part}
-                  </span>
-                ) : (
-                  // Keep hyphenated words (e.g. "AI-driven") from wrapping at the hyphen
-                  part.split(/(\S+-\S+)/).map((chunk, j) =>
-                    chunk.includes('-') ? (
-                      <span key={`${i}-${j}`} className='whitespace-nowrap'>
-                        {chunk}
-                      </span>
-                    ) : (
-                      chunk
-                    ),
-                  )
-                ),
-              )}
-            </h1>
-
-            {/* Subheading */}
-            <p className='text-sm sm:text-base md:text-lg text-[#1e0d01]/70 leading-relaxed max-w-2xl mx-auto mb-8 whitespace-pre-line'>
-              {hero.description}
-            </p>
-
-            {/* CTA Button */}
-            <div className='mb-4'>
-              <Button
-                variant='primary'
-                size='lg'
-                className='bg-[#f97518] hover:bg-[#e65f00] text-[#1e0d01] shadow-lg shadow-[#f97518]/30 h-12 px-7 text-sm font-semibold rounded-full flex items-center gap-1'
-                asChild
-              >
-                <Link href={hero.cta.href}>
-                  <span>{hero.cta.label}</span>
-                  <ChevronRight className='h-4 w-4 stroke-[2.5]' />
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </Container>
-
-        {/* Middle Horizontal Dashed Line with Centered Reviews Pill */}
-        <div className='relative w-full my-4 flex items-center justify-center'>
-          <div className='absolute inset-x-0 top-1/2 -translate-y-1/2 h-[1px] border-t border-dashed border-[rgba(30,13,1,0.14)]' />
-          <CornerDot position='top-left' className='top-1/2 -translate-y-1/2' />
-          <CornerDot
-            position='top-right'
-            className='top-1/2 -translate-y-1/2'
-          />
-
-          {/* TODO: bring it back later */}
-          {/* Centered Reviews Floating Pill */}
-          {/* <div className='relative z-10 inline-flex items-center gap-3 rounded-full border border-[rgba(30,13,1,0.08)] bg-white/95 backdrop-blur-md px-4 py-1.5 shadow-sm'>
-            <div className='flex -space-x-2'>
-              {hero.rating.avatars.map((avatar, idx) => (
-                <div
-                  key={idx}
-                  className='relative h-6 w-6 sm:h-7 sm:w-7 rounded-full border border-white overflow-hidden shadow-sm'
-                >
-                  <Image
-                    src={avatar}
-                    alt='User review avatar'
-                    fill
-                    className='object-cover'
-                  />
-                </div>
-              ))}
-            </div>
-            <span className='text-xs sm:text-sm font-medium text-[#1e0d01]'>
-              {hero.rating.count}
-            </span>
-            <span className='text-[#1e0d01]/30 font-light'>|</span>
-            <div className='flex items-center gap-1 text-xs sm:text-sm font-semibold text-[#1e0d01]'>
-              <span>{hero.rating.score}</span>
-              <div className='flex text-[#eba100]'>
-                {[...Array(5)].map((_, i) => (
-                  <Star
-                    key={i}
-                    className='h-3 w-3 sm:h-3.5 sm:w-3.5 fill-[#eba100]'
-                  />
-                ))}
-              </div>
-            </div>
-          </div> */}
+      {/* Phones and tablets: flower, then the specs as a grid */}
+      <div className='lg:hidden mt-8'>
+        <TulipAscii className='animate-tulip mx-auto h-[300px] sm:h-[380px] aspect-[400/520]' />
+        <div className='mx-auto mt-6 grid max-w-xl grid-cols-2 gap-2.5 sm:gap-3'>
+          {hero.callouts.map((c) => (
+            <Callout key={c.id} label={c.label} value={c.value} note={c.note} />
+          ))}
         </div>
+      </div>
 
-        {/* Expanding interactive demo on scroll */}
-        <Container>
-          <div
-            ref={imageContainerRef}
-            className='w-full max-w-5xl mx-auto pt-6 pb-12 transition-transform duration-200 ease-out will-change-transform'
-            style={{
-              transform: `scale(${scale}) translateY(${translateY}px)`,
-            }}
+      <div className='mx-auto mt-10 lg:mt-6 max-w-xl text-center'>
+        <p className='text-[16px] leading-relaxed text-ink/70'>{hero.description}</p>
+        <div className='mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3'>
+          <Link
+            href={hero.cta.href}
+            className='inline-flex items-center gap-2 rounded-full bg-[#f97518] px-6 py-3 text-sm font-semibold text-ink transition-colors hover:bg-[#e65f00]'
           >
-            <div className='relative rounded-2xl sm:rounded-3xl md:rounded-[2rem] border border-[rgba(30,13,1,0.08)] bg-white/90 p-2 sm:p-3 shadow-2xl backdrop-blur-xl'>
-              <TasteDashboardDemo />
-            </div>
-          </div>
-        </Container>
+            {hero.cta.label}
+            <ArrowUpRight className='h-4 w-4' />
+          </Link>
+          <Link
+            href='/docs'
+            className='font-serif italic text-lg text-ink underline decoration-ink/25 underline-offset-[6px] hover:decoration-ink'
+          >
+            Read the docs
+          </Link>
+        </div>
       </div>
     </section>
   );

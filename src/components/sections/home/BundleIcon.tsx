@@ -81,11 +81,11 @@ const icons: Record<string, () => React.JSX.Element> = {
   zap: ZapIcon,
 };
 
-export function BundleIcon({ name }: { name: string }) {
+export function BundleIcon({ name, className = '' }: { name: string; className?: string }) {
   const Icon = icons[name.toLowerCase()] ?? ImageIcon;
 
   return (
-    <div className='bundle-icon h-11 w-11 rounded-xl bg-gradient-to-br from-[#f8f8f8] to-white border border-[rgba(30,13,1,0.12)] flex items-center justify-center mb-6 shrink-0 shadow-xs text-[#1e0d01] transition-all duration-300 ease-out group-hover:-translate-y-0.5 group-hover:border-[#f97518]/40 group-hover:text-[#f97518] group-hover:shadow-md group-hover:shadow-[#f97518]/15'>
+    <div className={`bundle-icon h-10 w-10 shrink-0 rounded-full border border-rule bg-paper flex items-center justify-center text-ink transition-all duration-300 ease-out group-hover:-translate-y-0.5 group-hover:border-ink group-hover:bg-[#f97518] ${className}`}>
       <Icon />
     </div>
   );
