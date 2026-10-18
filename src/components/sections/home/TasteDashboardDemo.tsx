@@ -75,6 +75,29 @@ export function TasteDashboardDemo() {
 
   useEffect(() => () => timers.current.forEach(window.clearTimeout), []);
 
+  // Multiplayer-style "You" cursor for mouse users; the native cursor is hidden while it shows
+  const rootRef = useRef<HTMLDivElement>(null);
+  const cursorRef = useRef<HTMLDivElement>(null);
+  const [cursorVisible, setCursorVisible] = useState(false);
+  const [cursorPressed, setCursorPressed] = useState(false);
+
+  const moveCursor = (e: React.PointerEvent<HTMLDivElement>) => {
+    const root = rootRef.current;
+    if (e.pointerType !== 'mouse' || !root || !cursorRef.current) return;
+    const rect = root.getBoundingClientRect();
+    // The hero scales this card on scroll, so convert screen pixels back to local pixels
+    const scale = rect.width / root.offsetWidth || 1;
+    const x = (e.clientX - rect.left) / scale;
+    const y = (e.clientY - rect.top) / scale;
+    cursorRef.current.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+    if (!cursorVisible) setCursorVisible(true);
+  };
+
+  const hideCursor = () => {
+    setCursorVisible(false);
+    setCursorPressed(false);
+  };
+
   const labelHex = LABEL_COLORS[tokens.label];
   // Accent text (badge, checkmarks) falls back to ink when the primary is too light to read on white
   const accentText = contrast(tokens.primary, '#ffffff') >= 3 ? tokens.primary : '#1e0d01';
@@ -128,7 +151,16 @@ export function TasteDashboardDemo() {
   ] as const;
 
   return (
-    <div className='w-full rounded-xl sm:rounded-2xl md:rounded-[1.5rem] bg-[#fafafa] border border-[rgba(30,13,1,0.06)] text-left overflow-hidden'>
+    <div
+      ref={rootRef}
+      onPointerMove={moveCursor}
+      onPointerLeave={hideCursor}
+      onPointerDown={(e) => e.pointerType === 'mouse' && setCursorPressed(true)}
+      onPointerUp={() => setCursorPressed(false)}
+      className={`relative w-full rounded-xl sm:rounded-2xl md:rounded-[1.5rem] bg-[#fafafa] border border-[rgba(30,13,1,0.06)] text-left overflow-hidden ${
+        cursorVisible ? 'cursor-none [&_*]:cursor-none' : ''
+      }`}
+    >
       {/* Window bar */}
       <div className='flex items-center gap-3 border-b border-[rgba(30,13,1,0.06)] bg-white px-4 py-3'>
         <div className='flex items-center gap-1.5'>
@@ -362,6 +394,37 @@ export function TasteDashboardDemo() {
             </ul>
           </div>
         </section>
+      </div>
+
+      {/* Live cursor */}
+      <div
+        ref={cursorRef}
+        aria-hidden='true'
+        className={`pointer-events-none absolute left-0 top-0 z-50 transition-opacity duration-150 ${
+          cursorVisible ? 'opacity-100' : 'opacity-0'
+        }`}
+      >
+        <div
+          className={`origin-top-left transition-transform duration-100 ${cursorPressed ? 'scale-90' : 'scale-100'}`}
+        >
+          <svg
+            width='18'
+            height='20'
+            viewBox='0 0 18 20'
+            className='-ml-[2px] -mt-[2px] drop-shadow-[0_1px_2px_rgba(30,13,1,0.3)]'
+          >
+            <path
+              d='M2.5 2v15.2l4.3-4 2.9 6.3 2.6-1.2-2.8-6.2 5.9-.3L2.5 2z'
+              fill='#f97518'
+              stroke='#ffffff'
+              strokeWidth='1.5'
+              strokeLinejoin='round'
+            />
+          </svg>
+          <span className='absolute left-3.5 top-[17px] whitespace-nowrap rounded-full rounded-tl-[4px] bg-[#f97518] px-2 py-0.5 text-[11px] font-semibold text-[#1e0d01] shadow-[0_2px_6px_rgba(30,13,1,0.18)]'>
+            You
+          </span>
+        </div>
       </div>
     </div>
   );
