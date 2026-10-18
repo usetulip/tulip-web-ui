@@ -38,12 +38,6 @@ export interface FooterData {
     credits?: string;
   };
   columns: FooterColumn[];
-  newsletter: {
-    title: string;
-    description: string;
-    placeholder: string;
-    buttonText: string;
-  };
   socials: FooterSocial[];
 }
 

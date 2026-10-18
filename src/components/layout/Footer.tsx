@@ -1,10 +1,9 @@
-'use client';
-
-import React, { useState } from 'react';
+import React from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import footerData from '@/data/footer.json';
 import { FooterLandscape } from '@/components/layout/FooterLandscape';
-import { ArrowUpRight, Check, Linkedin } from 'lucide-react';
+import { Linkedin } from 'lucide-react';
 
 function XIcon({ className }: { className?: string }) {
   return (
@@ -15,18 +14,6 @@ function XIcon({ className }: { className?: string }) {
 }
 
 export function Footer() {
-  const [email, setEmail] = useState('');
-  const [subscribed, setSubscribed] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email.trim()) {
-      setSubscribed(true);
-      setTimeout(() => setSubscribed(false), 4000);
-      setEmail('');
-    }
-  };
-
   const getSocialIcon = (iconName: string) => {
     switch (iconName.toLowerCase()) {
       case 'linkedin':
@@ -45,9 +32,12 @@ export function Footer() {
         <div className='rounded-[22px] bg-white/95 backdrop-blur-sm px-6 sm:px-10 pt-10 pb-6 text-ink'>
           <div className='grid grid-cols-12 gap-x-6 gap-y-10'>
             {/* Brand */}
-            <div className='col-span-12 lg:col-span-5'>
-              <Link href='/' className='font-serif text-[2.4rem] leading-none tracking-[-0.02em] text-ink'>
-                tulip
+            <div className='col-span-12 lg:col-span-6'>
+              <Link href='/' className='inline-flex items-center gap-2.5'>
+                <span className='relative h-9 w-9 shrink-0'>
+                  <Image src='/logo.png' alt='' fill sizes='36px' className='object-contain' />
+                </span>
+                <span className='font-serif text-[2.4rem] leading-none tracking-[-0.02em] text-ink'>tulip</span>
               </Link>
               <p className='mt-4 max-w-sm text-sm leading-relaxed text-ink/65'>{footerData.brand.description}</p>
               <div className='mt-6 flex items-center gap-2'>
@@ -67,8 +57,12 @@ export function Footer() {
             </div>
 
             {/* Link columns */}
-            {footerData.columns.map((column) => (
-              <nav key={column.title} aria-label={column.title} className='col-span-6 sm:col-span-4 lg:col-span-2'>
+            {footerData.columns.map((column, i) => (
+              <nav
+                key={column.title}
+                aria-label={column.title}
+                className={`col-span-6 lg:col-span-2 ${i === 0 ? 'lg:col-start-9' : ''}`}
+              >
                 <h4 className='text-sm font-semibold text-ink'>{column.title}</h4>
                 <ul className='mt-4 space-y-2.5'>
                   {column.links.map((link) => (
@@ -81,31 +75,6 @@ export function Footer() {
                 </ul>
               </nav>
             ))}
-
-            {/* Newsletter */}
-            <div className='col-span-12 sm:col-span-4 lg:col-span-3'>
-              <h4 className='text-sm font-semibold text-ink'>{footerData.newsletter.title}</h4>
-              <p className='mt-4 text-sm leading-relaxed text-ink/65'>{footerData.newsletter.description}</p>
-              <form onSubmit={handleSubmit} className='mt-4 flex items-center rounded-full border border-rule bg-paper p-1 pl-4 focus-within:border-ink/40'>
-                <label htmlFor='footer-email' className='sr-only'>Email address</label>
-                <input
-                  id='footer-email'
-                  type='email'
-                  required
-                  placeholder={footerData.newsletter.placeholder}
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className='min-w-0 flex-1 bg-transparent py-1.5 text-sm text-ink placeholder:text-ink/40 outline-none'
-                />
-                <button
-                  type='submit'
-                  className='flex items-center gap-1 rounded-full bg-ink px-3.5 py-1.5 text-xs font-medium text-paper hover:bg-ink/85 transition-colors cursor-pointer'
-                >
-                  {subscribed ? 'Subscribed' : footerData.newsletter.buttonText}
-                  {subscribed ? <Check className='h-3.5 w-3.5' /> : <ArrowUpRight className='h-3.5 w-3.5' />}
-                </button>
-              </form>
-            </div>
           </div>
 
           {/* Bottom bar */}

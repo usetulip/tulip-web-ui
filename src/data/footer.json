@@ -36,12 +36,6 @@
       ]
     }
   ],
-  "newsletter": {
-    "title": "Newsletter",
-    "description": "Get tips, product updates, and insights on working smarter with AI.",
-    "placeholder": "Email address",
-    "buttonText": "Subscribe"
-  },
   "socials": [
     {
       "name": "X",
