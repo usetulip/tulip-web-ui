@@ -158,7 +158,8 @@ export function TasteDashboardDemo() {
       onPointerDown={(e) => e.pointerType === 'mouse' && setCursorPressed(true)}
       onPointerUp={() => setCursorPressed(false)}
       className={`relative w-full rounded-xl sm:rounded-2xl md:rounded-[1.5rem] bg-[#fafafa] border border-[rgba(30,13,1,0.06)] text-left overflow-hidden ${
-        cursorVisible ? 'cursor-none [&_*]:cursor-none' : ''
+        // !important so no element's own cursor (e.g. disabled:cursor-default) can bring the native one back
+        cursorVisible ? '!cursor-none [&_*]:!cursor-none' : ''
       }`}
     >
       {/* Window bar */}
@@ -407,21 +408,22 @@ export function TasteDashboardDemo() {
         <div
           className={`origin-top-left transition-transform duration-100 ${cursorPressed ? 'scale-90' : 'scale-100'}`}
         >
+          {/* Figma-style multiplayer cursor: a tailless arrowhead with a notched base, tip at (3, 3) */}
           <svg
-            width='18'
+            width='20'
             height='20'
-            viewBox='0 0 18 20'
-            className='-ml-[2px] -mt-[2px] drop-shadow-[0_1px_2px_rgba(30,13,1,0.3)]'
+            viewBox='0 0 20 20'
+            className='-ml-[3px] -mt-[3px] drop-shadow-[0_1px_2px_rgba(30,13,1,0.35)]'
           >
             <path
-              d='M2.5 2v15.2l4.3-4 2.9 6.3 2.6-1.2-2.8-6.2 5.9-.3L2.5 2z'
+              d='M3 3 L16.5 9.3 L10.6 11.1 L8.6 17.2 Z'
               fill='#f97518'
               stroke='#ffffff'
               strokeWidth='1.5'
               strokeLinejoin='round'
             />
           </svg>
-          <span className='absolute left-3.5 top-[17px] whitespace-nowrap rounded-full rounded-tl-[4px] bg-[#f97518] px-2 py-0.5 text-[11px] font-semibold text-[#1e0d01] shadow-[0_2px_6px_rgba(30,13,1,0.18)]'>
+          <span className='absolute left-[13px] top-[17px] whitespace-nowrap rounded-[4px] bg-[#f97518] px-1.5 py-[2px] text-[11px] font-medium leading-none text-white shadow-[0_1px_3px_rgba(30,13,1,0.2)]'>
             You
           </span>
         </div>
