@@ -132,3 +132,106 @@ html.lenis body {
   border-radius: 9999px;
   pointer-events: none;
 }
+
+/* Bundle card icons: motion plays while the card is hovered */
+.bundle-icon svg * {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.bundle-icon-type .stem,
+.bundle-icon-zap .bolt {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Figma: pieces pop apart and snap back together */
+  .bundle-card:hover .bundle-icon-figma .piece {
+    animation: bundle-spread 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .bundle-card:hover .bundle-icon-figma .piece-dot {
+    animation: bundle-spread-dot 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  /* Terminal: prompt nudges forward, cursor blinks */
+  .bundle-card:hover .bundle-icon-terminal .prompt {
+    animation: bundle-nudge 0.6s ease-in-out 2;
+  }
+  .bundle-card:hover .bundle-icon-terminal .cursor {
+    animation: bundle-blink 0.9s steps(1) infinite;
+  }
+
+  /* Type: crossbar stretches while the stem is redrawn */
+  .bundle-card:hover .bundle-icon-type .bar {
+    animation: bundle-stretch 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .bundle-card:hover .bundle-icon-type .stem {
+    animation: bundle-draw 0.6s ease-out;
+  }
+  .bundle-card:hover .bundle-icon-type .base {
+    animation: bundle-stretch 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.15s backwards;
+  }
+
+  /* Image: sun rises, ridge slides into place */
+  .bundle-card:hover .bundle-icon-image .sun {
+    animation: bundle-rise 0.8s ease-in-out;
+  }
+  .bundle-card:hover .bundle-icon-image .ridge {
+    animation: bundle-slide 0.8s ease-in-out;
+  }
+
+  /* Zap: bolt is redrawn, then flashes with a jolt */
+  .bundle-card:hover .bundle-icon-zap .bolt {
+    animation:
+      bundle-draw 0.5s ease-out,
+      bundle-flash 0.4s ease-out 0.5s,
+      bundle-jolt 0.3s ease-in-out 0.5s;
+  }
+}
+
+@keyframes bundle-spread {
+  45% { transform: translate(var(--dx), var(--dy)); }
+}
+
+@keyframes bundle-spread-dot {
+  45% { transform: translate(var(--dx), var(--dy)) scale(1.15); }
+}
+
+@keyframes bundle-nudge {
+  50% { transform: translateX(1.5px); }
+}
+
+@keyframes bundle-blink {
+  50% { opacity: 0; }
+}
+
+@keyframes bundle-stretch {
+  0% { transform: scaleX(1); }
+  35% { transform: scaleX(0.4); }
+  100% { transform: scaleX(1); }
+}
+
+@keyframes bundle-draw {
+  from { stroke-dashoffset: 1; }
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes bundle-rise {
+  50% { transform: translateY(-2px) scale(1.2); }
+}
+
+@keyframes bundle-slide {
+  0% { transform: translateX(0); }
+  40% { transform: translateX(-2px); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes bundle-flash {
+  40% { fill: currentColor; }
+}
+
+@keyframes bundle-jolt {
+  25% { transform: rotate(-8deg); }
+  75% { transform: rotate(8deg); }
+}

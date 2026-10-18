@@ -2,38 +2,14 @@
 
 import { Container } from '@/components/layout/Container';
 import { SectionFrame } from '@/components/layout/SectionFrame';
-import {
-  LucideFigma as Figma,
-  Image,
-  Smile,
-  SquareTerminal,
-  Type,
-  Zap,
-} from 'lucide-react';
+import { Smile } from 'lucide-react';
+import { BundleIcon } from '@/components/sections/home/BundleIcon';
 
 import homeData from '@/data/home.json';
 
 export function BundleSection() {
   const { bundle } = homeData;
 
-  const getIcon = (iconName: string) => {
-    switch (iconName.toLowerCase()) {
-      case 'figma':
-        return <Figma className='h-4 w-4 fill-current stroke-none' />;
-      case 'terminal':
-        return <SquareTerminal className='h-4 w-4 stroke-[2]' />;
-      case 'type':
-        return <Type className='h-4 w-4 stroke-[2]' />;
-      case 'image':
-        return <Image className='h-4 w-4 stroke-[2]' />;
-      case 'zap':
-        return <Zap className='h-4 w-4 stroke-[2]' />;
-      default:
-        return (
-          <Image className='h-4 w-4 stroke-[2] -rotate-12 translate-x-[-1px] translate-y-[1px]' />
-        );
-    }
-  };
 
   const cards = bundle.items;
 
@@ -85,11 +61,9 @@ export function BundleSection() {
               {cards.slice(0, 3).map((card, idx) => (
                 <div
                   key={card.id || idx}
-                  className='rounded-[22px] bg-white/90 p-7 sm:p-9 border border-[rgba(30,13,1,0.08)] shadow-xs flex flex-col justify-start'
+                  className='group bundle-card rounded-[22px] bg-white/90 p-7 sm:p-9 border border-[rgba(30,13,1,0.08)] shadow-xs flex flex-col justify-start'
                 >
-                  <div className='h-11 w-11 rounded-xl bg-gradient-to-br from-[#f8f8f8] to-white border border-[rgba(30,13,1,0.12)] flex items-center justify-center mb-6 shrink-0 shadow-xs'>
-                    {getIcon(card.icon)}
-                  </div>
+                  <BundleIcon name={card.icon} />
 
                   <h3 className='text-lg sm:text-xl font-bold text-[#1e0d01] font-heading mb-3 leading-snug'>
                     {card.title}
@@ -105,10 +79,8 @@ export function BundleSection() {
             {cards.length > 3 && (
               <div className='grid grid-cols-1 md:grid-cols-12 gap-6'>
                 {cards[3] && (
-                  <div className='md:col-span-5 rounded-[22px] bg-white/90 p-7 sm:p-9 border border-[rgba(30,13,1,0.08)] shadow-xs flex flex-col justify-start'>
-                    <div className='h-11 w-11 rounded-xl bg-gradient-to-br from-[#f8f8f8] to-white border border-[rgba(30,13,1,0.12)] flex items-center justify-center mb-6 shrink-0 shadow-xs'>
-                      {getIcon(cards[3].icon)}
-                    </div>
+                  <div className='group bundle-card md:col-span-5 rounded-[22px] bg-white/90 p-7 sm:p-9 border border-[rgba(30,13,1,0.08)] shadow-xs flex flex-col justify-start'>
+                    <BundleIcon name={cards[3].icon} />
 
                     <h3 className='text-lg sm:text-xl font-bold text-[#1e0d01] font-heading mb-3 leading-snug'>
                       {cards[3].title}
@@ -121,10 +93,8 @@ export function BundleSection() {
                 )}
 
                 {cards[4] && (
-                  <div className='md:col-span-7 rounded-[22px] bg-white/90 p-7 sm:p-9 border border-[rgba(30,13,1,0.08)] shadow-xs flex flex-col justify-start'>
-                    <div className='h-11 w-11 rounded-xl bg-gradient-to-br from-[#f8f8f8] to-white border border-[rgba(30,13,1,0.12)] flex items-center justify-center mb-6 shrink-0 shadow-xs'>
-                      {getIcon(cards[4].icon)}
-                    </div>
+                  <div className='group bundle-card md:col-span-7 rounded-[22px] bg-white/90 p-7 sm:p-9 border border-[rgba(30,13,1,0.08)] shadow-xs flex flex-col justify-start'>
+                    <BundleIcon name={cards[4].icon} />
 
                     <h3 className='text-lg sm:text-xl font-bold text-[#1e0d01] font-heading mb-3 leading-snug'>
                       {cards[4].title}
