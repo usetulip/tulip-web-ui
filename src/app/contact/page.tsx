@@ -97,7 +97,7 @@ function ContactForm() {
 
       {submitted ? (
         <div className="rounded-2xl bg-orange-50/70 border border-orange-200/80 p-8 text-center flex flex-col items-center justify-center">
-          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#f97518] text-white mb-4 shadow-sm">
+          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#f97518] text-[#1e0d01] mb-4 shadow-sm">
             <Check className="h-6 w-6 stroke-[3]" />
           </div>
           <h3 className="text-xl font-bold text-[#1e0d01] mb-2 font-heading">
@@ -213,7 +213,7 @@ function ContactForm() {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full flex items-center justify-center gap-1.5 rounded-full bg-[#f97518] hover:bg-[#e65f00] text-white py-3.5 px-6 text-sm font-bold shadow-md shadow-[#f97518]/25 hover:shadow-lg transition-all cursor-pointer disabled:opacity-70 mt-2"
+            className="w-full flex items-center justify-center gap-1.5 rounded-full bg-[#f97518] hover:bg-[#e65f00] text-[#1e0d01] py-3.5 px-6 text-sm font-bold shadow-md shadow-[#f97518]/25 hover:shadow-lg transition-all cursor-pointer disabled:opacity-70 mt-2"
           >
             <span>{isSubmitting ? "Sending..." : form.submitButton.label}</span>
             <ChevronRight className="h-4 w-4 stroke-[2.5]" />

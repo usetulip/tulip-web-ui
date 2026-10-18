@@ -57,7 +57,7 @@ export function CtaBanner() {
             <div className='relative z-10 flex flex-wrap items-center justify-center gap-4'>
               <Link
                 href={href}
-                className='inline-flex items-center gap-1.5 rounded-full bg-[#f97518] hover:bg-[#e65f00] text-white px-8 py-3.5 text-sm font-bold shadow-lg shadow-[#f97518]/30 hover:scale-[1.02] transition-all'
+                className='inline-flex items-center gap-1.5 rounded-full bg-[#f97518] hover:bg-[#e65f00] text-[#1e0d01] px-8 py-3.5 text-sm font-bold shadow-lg shadow-[#f97518]/30 hover:scale-[1.02] transition-all'
               >
                 <span>{label}</span>
                 <ChevronRight className='h-4 w-4 stroke-[2.5]' />

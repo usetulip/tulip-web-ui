@@ -143,7 +143,7 @@ export function Footer() {
                 />
                 <button
                   type='submit'
-                  className='rounded-full bg-[#f97518] hover:bg-[#e65f00] text-white px-4 py-2 text-xs font-bold shadow-xs flex items-center gap-1 shrink-0 transition-all cursor-pointer whitespace-nowrap'
+                  className='rounded-full bg-[#f97518] hover:bg-[#e65f00] text-[#1e0d01] px-4 py-2 text-xs font-bold shadow-xs flex items-center gap-1 shrink-0 transition-all cursor-pointer whitespace-nowrap'
                 >
                   <span>
                     {subscribed

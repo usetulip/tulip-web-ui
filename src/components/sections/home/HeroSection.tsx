@@ -110,7 +110,7 @@ export function HeroSection() {
               <Button
                 variant='primary'
                 size='lg'
-                className='bg-[#f97518] hover:bg-[#e65f00] text-white shadow-lg shadow-[#f97518]/30 h-12 px-7 text-sm font-semibold rounded-full flex items-center gap-1'
+                className='bg-[#f97518] hover:bg-[#e65f00] text-[#1e0d01] shadow-lg shadow-[#f97518]/30 h-12 px-7 text-sm font-semibold rounded-full flex items-center gap-1'
                 asChild
               >
                 <Link href={hero.cta.href}>

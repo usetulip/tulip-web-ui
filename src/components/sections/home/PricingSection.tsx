@@ -110,7 +110,7 @@ export function PricingSection() {
                       {isPopular ? (
                         <Link
                           href={plan.buttonHref}
-                          className='flex items-center justify-center gap-1.5 w-full rounded-full bg-[#f97518] hover:bg-[#e65f00] text-white py-3 px-4 text-xs sm:text-sm font-bold shadow-md shadow-[#f97518]/25 transition-all'
+                          className='flex items-center justify-center gap-1.5 w-full rounded-full bg-[#f97518] hover:bg-[#e65f00] text-[#1e0d01] py-3 px-4 text-xs sm:text-sm font-bold shadow-md shadow-[#f97518]/25 transition-all'
                         >
                           <span>{plan.buttonText}</span>
                           <ChevronRight className='h-4 w-4 stroke-[2.5]' />

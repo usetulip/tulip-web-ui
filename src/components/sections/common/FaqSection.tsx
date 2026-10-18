@@ -81,7 +81,7 @@ export function FaqSection() {
 
               <Link
                 href='/contact'
-                className='inline-flex items-center gap-1.5 rounded-full bg-[#f97518] hover:bg-[#e65f00] text-white px-7 py-3 text-sm font-semibold shadow-md shadow-[#f97518]/25 transition-all'
+                className='inline-flex items-center gap-1.5 rounded-full bg-[#f97518] hover:bg-[#e65f00] text-[#1e0d01] px-7 py-3 text-sm font-semibold shadow-md shadow-[#f97518]/25 transition-all'
               >
                 <span>Get Started</span>
                 <ChevronRight className='h-4 w-4 stroke-[2.5]' />

@@ -99,7 +99,7 @@ export default function CareerPage() {
                   {/* Apply Now Button */}
                   <Link
                     href={job.applyHref}
-                    className="inline-flex items-center justify-center gap-1.5 rounded-full bg-[#f97518] hover:bg-[#e65f00] text-white px-7 py-3 text-xs sm:text-sm font-bold shadow-md shadow-[#f97518]/25 hover:shadow-lg transition-all shrink-0 self-start md:self-center"
+                    className="inline-flex items-center justify-center gap-1.5 rounded-full bg-[#f97518] hover:bg-[#e65f00] text-[#1e0d01] px-7 py-3 text-xs sm:text-sm font-bold shadow-md shadow-[#f97518]/25 hover:shadow-lg transition-all shrink-0 self-start md:self-center"
                   >
                     <span>Apply Now</span>
                     <ChevronRight className="h-4 w-4 stroke-[2.5]" />
