@@ -1,7 +1,7 @@
 {
   "badge": "FAQs",
   "title": "Frequently Asked Questions",
-  "description": "From setup to support, here are the answers you need to launch faster with confidence.",
+  "description": "Answers to the questions teams ask before their first sprint.",
   "items": [
     {
       "id": "faq-1",
@@ -10,28 +10,28 @@
     },
     {
       "id": "faq-2",
-      "question": "Can I customize everything in the template?",
-      "answer": "Yes, all components, layout blocks, typography tokens, and colors are built with 100% standard Tailwind CSS and Figma variables so you can effortlessly adapt them to your brand."
+      "question": "Can we change the components after handoff?",
+      "answer": "Yes. Every component, layout block, type token and color is standard Tailwind CSS and Figma variables, so your team can change anything."
     },
     {
       "id": "faq-3",
-      "question": "Is this template only for SaaS founders?",
-      "answer": "While designed primarily for SaaS founders and digital product builders, agencies, solo hackers, and studios can use Tulip to ship high-converting pages in record time."
+      "question": "Who is Tulip for?",
+      "answer": "Founders and small product teams who build with AI coding tools and want the output to look like their brand. Agencies and studios can use it for client work too."
     },
     {
       "id": "faq-4",
-      "question": "How fast can I get my site live?",
-      "answer": "With our synchronized Figma design system and ready-to-deploy Next.js repository, you can launch a production-ready website in as little as 48 hours."
+      "question": "How fast do we get the system?",
+      "answer": "Your Master Figma system and Next.js repo arrive 48 hours after we receive a complete brief. How soon you launch after that depends on your backend work."
     },
     {
       "id": "faq-5",
       "question": "Can I use this for client projects?",
-      "answer": "Yes! Once you acquire the system, you have full ownership of the code and design files to use for both personal and commercial client projects with zero lock-in."
+      "answer": "Yes. Once you've paid, you own the code and design files and can use them for personal and commercial client projects."
     },
     {
       "id": "faq-6",
-      "question": "Is Framer free to use with this template?",
-      "answer": "The Next.js repository is completely self-contained and free of any subscription dependencies. You can host it on Vercel, Netlify, or AWS with zero ongoing licensing fees."
+      "question": "Are there ongoing licence fees for the code?",
+      "answer": "No. The Next.js repository has no subscription dependencies. Host it on Vercel, Netlify or AWS and you pay only your hosting provider."
     },
     {
       "id": "faq-7",

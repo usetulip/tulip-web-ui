@@ -7,7 +7,7 @@
     "title": "The design layer for AI-driven software.",
     "description": "Stop letting AI hallucinate your UI. Tulip pairs strict Taste Governance with real-time Model Context Protocol (MCP) streaming, pushing human-approved design tokens and component blocks directly into your AI IDE.",
     "cta": {
-      "label": "Start a sprint",
+      "label": "Start your 48-hour sprint",
       "href": "/contact"
     },
     "rating": {
@@ -51,14 +51,14 @@
   },
   "metrics": {
     "badge": "The frontend bottleneck",
-    "manifestoText": "AI finally has taste. While generic tools output un-deployable UI and traditional agencies take five weeks to draw wireframes, Tulip bridges the gap. Our engine compiles high-taste, deterministic design systems and production-ready infrastructure in exactly 48 hours.",
+    "manifestoText": "AI can build a React app in an afternoon, but it can't remember your brand. Agencies take five weeks to fix that with wireframes. Tulip does it in 48 hours by giving your AI the exact tokens and components it's allowed to use, then checking every screen before it ships.",
     "items": [
       {
         "id": "metric-1",
         "value": "48h",
         "number": 48,
         "suffix": "h",
-        "label": "Garaunteed Delivery",
+        "label": "Guaranteed Delivery",
         "color": "primary"
       },
       {
@@ -132,41 +132,41 @@
   },
   "bundle": {
     "badge": "The Bundle",
-    "title": "The ultimate technical handoff",
-    "description": "Everything your engineering team needs to start hooking up the backend today",
+    "title": "A handoff your engineers can build on",
+    "description": "A Figma file, a React repo and coded layouts that match each other exactly, so your team can start wiring up the backend the same day.",
     "items": [
       {
         "id": "bundle-1",
         "title": "Master Figma System",
-        "description": "A pristine file pre-configured with strict local variables, semantic color tokens, and locked-in typography.",
+        "description": "One Figma file where every color, spacing value and type style is a named variable, so nobody can drift off-system.",
         "icon": "figma",
         "image": "/assets/fJMMzQWbchAcNrvxPyjySeQcU.png"
       },
       {
         "id": "bundle-2",
         "title": "Production React Repo",
-        "description": "Your exact 1:1 engineering mirror. Clean, accessible components ready to drop into any Next.js environment.",
+        "description": "The same components as the Figma file, built in React for Next.js and checked for accessibility before handoff.",
         "icon": "terminal",
         "image": "/assets/6rjXtbd8E2FHwFV3zjojDd9QI.png"
       },
       {
         "id": "bundle-3",
         "title": "High-Legibility Typography",
-        "description": "Standardized text for maximum readability across dense financial or analytical dashboards.",
+        "description": "A type scale tuned for dense screens, so tables, charts and dashboards stay readable at small sizes.",
         "icon": "type",
         "image": "/assets/IeoZkp15RNnms3DLvQu03eYkRRA.png"
       },
       {
         "id": "bundle-4",
         "title": "Native Iconography",
-        "description": "We strip out generic open-source icons and embed proprietary, sharp SVGs directly into your UI blocks.",
+        "description": "Custom SVG icons made for your product, in place of the open-source set every other app uses.",
         "icon": "image",
         "image": "/assets/OkLS35BGhVWI8Rae54CP13jG5M.png"
       },
       {
         "id": "bundle-5",
         "title": "The 48-Hour Handoff",
-        "description": "You receive a complete UI bundle. Download your Master Figma file, your synchronized GitHub repository, and your custom coded layouts, ready for your backend engineers.",
+        "description": "48 hours after your brief, you get the Master Figma file, a synced GitHub repo and your coded page layouts, ready for your backend engineers.",
         "icon": "zap",
         "image": "/assets/LjoxM75Qd30oQtgpVAY3zPBwI.png"
       }
@@ -179,8 +179,8 @@
     "cards": [
       {
         "phase": "Minute Zero",
-        "title": "Handling your UI DNA and the architecture",
-        "description": "Don't write open-ended prompts. Just fill out our strict 5-minute intake brief. Give us your primary hex codes, select your layout archetype, and check off the required features.",
+        "title": "Five minutes to capture your UI DNA",
+        "description": "Skip the open-ended prompts. Our 5-minute brief asks for your primary hex codes, a layout archetype and a checklist of the features you need.",
         "cta": {
           "label": "View the Brief Wizard",
           "href": "#pricing"
@@ -190,7 +190,7 @@
       {
         "phase": "HOUR 48",
         "title": "Governed by taste. Compiled by AI.",
-        "description": "We don't blindly ship AI drafts. Our engine maps your brief to an Intermediate UI Representation (UIR). An agent audits the visual tokens, ensures the Figma variables perfectly match the repository, and verifies WCAG accessibility before handoff.",
+        "description": "We don't blindly ship AI drafts. Our engine maps your brief to an Intermediate UI Representation (UIR). An agent audits the visual tokens, confirms the Figma variables match the repository, and verifies WCAG accessibility before handoff.",
         "cta": {
           "label": "See the Output Repo",
           "href": "#pricing"
@@ -201,7 +201,7 @@
   },
   "engine": {
     "badge": "The Engine",
-    "title": "Built for strict constraints",
+    "title": "Three guardrails for AI-built UI",
     "description": "We force AI to use your actual Lego bricks, not invent new ones.",
     "features": [
       {
@@ -224,7 +224,7 @@
   "pricing": {
     "badge": "Pricing",
     "title": "One Flat Fee",
-    "description": "Predictable and economics",
+    "description": "Fixed monthly pricing. Pick the plan that matches how much of your frontend you want governed.",
     "plans": [
       {
         "id": "blueprint",
@@ -232,7 +232,7 @@
         "price": "$499",
         "period": "/ month",
         "description": "Figma Master System",
-        "buttonText": "Buy Figma System",
+        "buttonText": "Get the Figma System",
         "buttonVariant": "outline",
         "buttonHref": "/contact?plan=The%20Blueprint",
         "features": [
@@ -252,7 +252,7 @@
         "description": "The Full Infrastructure",
         "badge": "Save 20%",
         "popular": true,
-        "buttonText": "Get Started Now",
+        "buttonText": "Start My 48-Hour Sprint",
         "buttonVariant": "primary",
         "buttonHref": "/contact?plan=The%20Core%20Sprint",
         "features": [
@@ -270,7 +270,7 @@
         "price": "$4,999",
         "period": "/ month",
         "description": "Continuous Governance",
-        "buttonText": "Buy Figma System",
+        "buttonText": "Get Continuous Governance",
         "buttonVariant": "outline",
         "buttonHref": "/contact?plan=The%20Pipeline",
         "features": [
@@ -287,7 +287,7 @@
   "ctaBanner": {
     "badge": "Start Now",
     "title": "Ready to fix your frontend bottleneck?",
-    "description": "Stop wasting engineering cycles on padding and hex codes. Get back to finding product-market fit",
+    "description": "Stop wasting engineering cycles on padding and hex codes. Get back to finding product-market fit.",
     "buttonText": "Start Your 48-Hour Sprint",
     "buttonHref": "/contact",
     "cta": {
