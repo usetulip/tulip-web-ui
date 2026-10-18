@@ -1,8 +1,8 @@
 import React from 'react';
-import Link from 'next/link';
 import { ArrowUpRight, Plus } from 'lucide-react';
 import homeData from '@/data/home.json';
 import { SectionHead } from '@/components/layout/SectionHead';
+import { ApplyButton } from '@/components/modals/ApplyModal';
 
 export function PricingSection() {
   const { pricing } = homeData;
@@ -42,9 +42,9 @@ export function PricingSection() {
             </ul>
 
             <div className='px-6 sm:px-8 pt-8 pb-7'>
-              <Link
-                href={plan.buttonHref}
-                className={`flex items-center justify-center gap-2 rounded-full px-4 py-3 text-sm font-semibold transition-colors ${
+              <ApplyButton
+                tier={plan.name}
+                className={`flex w-full items-center justify-center gap-2 rounded-full px-4 py-3 text-sm font-semibold transition-colors cursor-pointer ${
                   plan.popular
                     ? 'bg-[#f97518] text-ink hover:bg-[#e65f00]'
                     : 'border border-rule text-ink hover:border-ink'
@@ -52,7 +52,7 @@ export function PricingSection() {
               >
                 {plan.buttonText}
                 <ArrowUpRight className='h-4 w-4' />
-              </Link>
+              </ApplyButton>
             </div>
           </article>
         ))}

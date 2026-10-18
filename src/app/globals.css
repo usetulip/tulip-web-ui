@@ -272,3 +272,16 @@ html.lenis body {
   .animate-callout-line { stroke-dasharray: 1; animation: callout-draw 0.7s ease-out both; }
   .animate-callout { animation: callout-fade 0.5s ease-out both; }
 }
+
+/* Apply modal */
+@keyframes apply-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes apply-rise {
+  from { opacity: 0; transform: translate(-50%, calc(-50% + 12px)); }
+  to { opacity: 1; transform: translate(-50%, -50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  [role='dialog'], [data-state='open'] { animation: none !important; }
+}

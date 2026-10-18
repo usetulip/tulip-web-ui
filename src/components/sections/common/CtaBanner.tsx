@@ -1,8 +1,8 @@
 import React from 'react';
-import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import homeData from '@/data/home.json';
 import { withAccent } from '@/components/layout/SectionHead';
+import { ApplyButton } from '@/components/modals/ApplyModal';
 
 export function CtaBanner() {
   const { ctaBanner } = homeData;
@@ -16,13 +16,10 @@ export function CtaBanner() {
         {withAccent(ctaBanner.title, ctaBanner.accent)}
       </h2>
       <p className='mx-auto mt-6 max-w-md text-[16px] leading-relaxed text-ink/70'>{ctaBanner.description}</p>
-      <Link
-        href={ctaBanner.cta.href}
-        className='mt-9 inline-flex items-center gap-2 rounded-full bg-[#f97518] px-6 py-3 text-sm font-semibold text-ink transition-colors hover:bg-[#e65f00]'
-      >
+      <ApplyButton className='mt-9 inline-flex items-center gap-2 rounded-full bg-[#f97518] px-6 py-3 text-sm font-semibold text-ink transition-colors hover:bg-[#e65f00] cursor-pointer'>
         {ctaBanner.cta.label}
-        <ArrowUpRight className='h-4 w-4' />
-      </Link>
+        <ArrowUpRight className='h-4 w-4' aria-hidden='true' />
+      </ApplyButton>
     </section>
   );
 }

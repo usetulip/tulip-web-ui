@@ -7,8 +7,8 @@
     "title": "The design layer for AI-driven software.",
     "description": "Stop letting AI hallucinate your UI. Tulip pairs strict Taste Governance with real-time Model Context Protocol (MCP) streaming, pushing human-approved design tokens and component blocks directly into your AI IDE.",
     "cta": {
-      "label": "Start your 48-hour sprint",
-      "href": "/contact"
+      "label": "Apply for Private Access",
+      "action": "apply"
     },
     "callouts": [
       {
@@ -155,8 +155,7 @@
           "Read-Only MCP Access (Cursor & Claude Code)",
           "Standard Community & Doc Updates",
           "Zero Lock-In (100% Owned Assets)"
-        ],
-        "buttonHref": "/contact?plan=The%20Blueprint"
+        ]
       },
       {
         "id": "infrastructure",
@@ -176,8 +175,7 @@
           "Operator Taste Dashboard Access",
           "Live MCP Token & Block Streaming (mcp.usetulip.co)",
           "Shared Slack Channel Access"
-        ],
-        "buttonHref": "/contact?plan=The%20Infrastructure"
+        ]
       },
       {
         "id": "continuous-governance",
@@ -195,8 +193,7 @@
           "Dedicated Design Engineer Support",
           "Priority AI Component Generation",
           "24/7 Dedicated Support"
-        ],
-        "buttonHref": "/contact?plan=Continuous%20Governance"
+        ]
       }
     ],
     "accent": "plan."
@@ -205,11 +202,9 @@
     "badge": "Start Now",
     "title": "Ready to fix your frontend bottleneck?",
     "description": "Stop wasting engineering cycles on padding and hex codes. Get back to finding product-market fit.",
-    "buttonText": "Start Your 48-Hour Sprint",
-    "buttonHref": "/contact",
     "cta": {
-      "label": "Start Your 48-Hour Sprint",
-      "href": "/contact"
+      "label": "Apply for Private Access",
+      "action": "apply"
     },
     "accent": "bottleneck?"
   },
@@ -247,5 +242,28 @@
         "owner": "MCP"
       }
     ]
+  },
+  "apply": {
+    "cohort": "Cohort #04",
+    "slots": "3 Slots Remaining",
+    "title": "Apply for private access",
+    "accent": "private access",
+    "description": "Tulip onboards a small cohort at a time so every team gets a hands-on setup. Tell us about your project and we'll be in touch.",
+    "ides": [
+      "Cursor",
+      "Claude Code",
+      "Windsurf"
+    ],
+    "stages": [
+      "Idea or prototype",
+      "Building the MVP",
+      "Live with users",
+      "Scaling an existing product"
+    ],
+    "submitLabel": "Submit application",
+    "success": {
+      "title": "You're on the list.",
+      "body": "Thanks, {name}. Your application for {cohort} is in, and we'll email {email} with next steps."
+    }
   }
 }

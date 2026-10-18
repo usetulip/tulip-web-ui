@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { SmoothScrollProvider } from "@/components/providers/SmoothScrollProvider";
+import { ApplyModalProvider } from "@/components/modals/ApplyModal";
 
 // Newsreader (light, with italics) sets the display type, Archivo carries body copy,
 // Geist Mono is reserved for spec callouts and token values.
@@ -76,11 +77,13 @@ export default function RootLayout({
     <html lang="en" className={`${archivo.variable} ${newsreader.variable} ${geistMono.variable}`}>
       <body className="font-sans min-h-screen relative flex flex-col justify-between selection:bg-[#f97518] selection:text-[#1e0d01] antialiased">
         <SmoothScrollProvider>
-          <Header />
-          <main className="flex-1 relative z-10">
-            <div className="page-frame">{children}</div>
-          </main>
-          <Footer />
+          <ApplyModalProvider>
+            <Header />
+            <main className="flex-1 relative z-10">
+              <div className="page-frame">{children}</div>
+            </main>
+            <Footer />
+          </ApplyModalProvider>
         </SmoothScrollProvider>
       </body>
     </html>

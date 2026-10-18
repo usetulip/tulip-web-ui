@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import navigationData from '@/data/navigation.json';
+import { useApplyModal } from '@/components/modals/ApplyModal';
 import { ArrowUpRight, Menu, X } from 'lucide-react';
 
 function scrollToTarget(target: string | number) {
@@ -23,6 +24,7 @@ function scrollToTarget(target: string | number) {
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { openApply } = useApplyModal();
   const pathname = usePathname();
 
   // Once the page moves, the header picks up a blurred paper backing and a hairline
@@ -97,13 +99,15 @@ export function Header() {
 
           {/* CTA + mobile toggle */}
           <div className='justify-self-end flex items-center gap-2'>
-            <Link
-              href='/contact'
-              className='hidden sm:inline-flex items-center gap-1.5 rounded-full bg-ink px-4 py-2 text-sm font-medium text-paper hover:bg-ink/85 transition-colors'
+            <button
+              type='button'
+              aria-haspopup='dialog'
+              onClick={() => openApply()}
+              className='hidden sm:inline-flex items-center gap-1.5 rounded-full bg-ink px-4 py-2 text-sm font-medium text-paper hover:bg-ink/85 transition-colors cursor-pointer'
             >
-              Start a sprint
-              <ArrowUpRight className='h-3.5 w-3.5' />
-            </Link>
+              Claim Access
+              <ArrowUpRight className='h-3.5 w-3.5' aria-hidden='true' />
+            </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className='md:hidden flex h-9 w-9 items-center justify-center rounded-full border border-rule text-ink'
@@ -131,14 +135,18 @@ export function Header() {
                 </li>
               ))}
             </ul>
-            <Link
-              href='/contact'
-              onClick={() => setMobileMenuOpen(false)}
-              className='mt-3 flex items-center justify-center gap-1.5 rounded-full bg-ink py-3 text-sm font-medium text-paper'
+            <button
+              type='button'
+              aria-haspopup='dialog'
+              onClick={() => {
+                setMobileMenuOpen(false);
+                openApply();
+              }}
+              className='mt-3 flex w-full items-center justify-center gap-1.5 rounded-full bg-ink py-3 text-sm font-medium text-paper'
             >
-              Start your 48-hour sprint
-              <ArrowUpRight className='h-4 w-4' />
-            </Link>
+              Claim Access
+              <ArrowUpRight className='h-4 w-4' aria-hidden='true' />
+            </button>
           </nav>
         )}
       </div>

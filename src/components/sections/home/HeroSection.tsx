@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import homeData from '@/data/home.json';
 import { TulipAscii } from '@/components/sections/home/TulipAscii';
+import { ApplyButton } from '@/components/modals/ApplyModal';
 
 // Callout geometry on a 1080x600 stage. The tulip fills the stage height, centered.
 // Anchors sit a little inside the petal and leaf edges so they stay on the flower as it turns.
@@ -57,13 +58,10 @@ export function HeroSection() {
       <div className='mx-auto mt-7 max-w-xl text-center'>
         <p className='text-[16px] leading-relaxed text-ink/70'>{hero.description}</p>
         <div className='mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3'>
-          <Link
-            href={hero.cta.href}
-            className='inline-flex items-center gap-2 rounded-full bg-[#f97518] px-6 py-3 text-sm font-semibold text-ink transition-colors hover:bg-[#e65f00]'
-          >
+          <ApplyButton className='inline-flex items-center gap-2 rounded-full bg-[#f97518] px-6 py-3 text-sm font-semibold text-ink transition-colors hover:bg-[#e65f00] cursor-pointer'>
             {hero.cta.label}
-            <ArrowUpRight className='h-4 w-4' />
-          </Link>
+            <ArrowUpRight className='h-4 w-4' aria-hidden='true' />
+          </ApplyButton>
           <Link
             href='/docs'
             className='font-serif italic text-lg text-ink underline decoration-ink/25 underline-offset-[6px] hover:decoration-ink'
