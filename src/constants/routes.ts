@@ -6,6 +6,7 @@ export const APP_ROUTES = {
   BLOG: "/blog",
   DOCS: "/docs",
   PRIVACY_POLICY: "/privacy-policy",
+  TERMS: "/terms",
   NOT_FOUND: "/404",
   BUNDLE_SECTION: "/#bundle",
   ENGINE_SECTION: "/#engine",

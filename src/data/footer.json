@@ -1,32 +1,38 @@
 {
   "brand": {
     "name": "Tulip",
-    "description": "AI-powered portfolio template designed to help SaaS founders, creators launch stunning sites effortlessly and fast.",
-    "copyright": "© 2025 Tulip. All rights reserved."
+    "description": "The design layer for AI-driven software. Tulip governs your design tokens and components for taste, then streams them live into your AI IDE over MCP.",
+    "copyright": "© 2026 Tulip. All rights reserved."
   },
   "columns": [
     {
-      "title": "Company",
+      "title": "Product",
       "links": [
-        { "label": "Home", "href": "/" },
-        { "label": "About us", "href": "/about" },
-        { "label": "Pricing", "href": "/#pricing" },
-        { "label": "Blog", "href": "/blog" },
         {
-          "label": "Blog Details",
-          "href": "/blog/how-ai-design-tools-help-founders-launch-10x-faster"
+          "label": "Product",
+          "href": "/#bundle"
+        },
+        {
+          "label": "Engine",
+          "href": "/#engine"
+        },
+        {
+          "label": "Pricing",
+          "href": "/#pricing"
         }
       ]
     },
     {
-      "title": "Product",
+      "title": "Company",
       "links": [
-        { "label": "Features", "href": "/#engine" },
-        { "label": "Docs", "href": "/docs" },
-        { "label": "Careers", "href": "/career" },
-        { "label": "Contact", "href": "/contact" },
-        { "label": "404", "href": "/404" },
-        { "label": "Privacy Policy", "href": "/privacy-policy" }
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Docs",
+          "href": "/docs"
+        }
       ]
     }
   ],
@@ -37,17 +43,25 @@
     "buttonText": "Subscribe"
   },
   "socials": [
-    { "name": "Facebook", "href": "https://facebook.com/", "icon": "facebook" },
+    {
+      "name": "X",
+      "href": "https://x.com/",
+      "icon": "x"
+    },
     {
       "name": "LinkedIn",
       "href": "https://www.linkedin.com/",
       "icon": "linkedin"
+    }
+  ],
+  "legal": [
+    {
+      "label": "Privacy Policy",
+      "href": "/privacy-policy"
     },
     {
-      "name": "Instagram",
-      "href": "https://www.instagram.com/",
-      "icon": "instagram"
-    },
-    { "name": "Telegram", "href": "https://telegram.org/", "icon": "telegram" }
+      "label": "Terms of Service",
+      "href": "/terms"
+    }
   ]
 }

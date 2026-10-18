@@ -5,14 +5,15 @@ import Link from 'next/link';
 import Image from 'next/image';
 import footerData from '@/data/footer.json';
 import { Container } from '@/components/layout/Container';
-import {
-  ChevronRight,
-  Check,
-  Linkedin,
-  Instagram,
-  Send,
-  Facebook,
-} from 'lucide-react';
+import { ChevronRight, Check, Linkedin } from 'lucide-react';
+
+function XIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox='0 0 24 24' className={className} fill='currentColor' aria-hidden='true'>
+      <path d='M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z' />
+    </svg>
+  );
+}
 
 export function Footer() {
   const [email, setEmail] = useState('');
@@ -29,17 +30,11 @@ export function Footer() {
 
   const getSocialIcon = (iconName: string) => {
     switch (iconName.toLowerCase()) {
-      case 'facebook':
-        return <Facebook className='h-4 w-4 fill-current stroke-none' />;
       case 'linkedin':
         return <Linkedin className='h-4 w-4 stroke-[2]' />;
-      case 'instagram':
-        return <Instagram className='h-4 w-4 stroke-[2]' />;
-      case 'telegram':
+      case 'x':
       default:
-        return (
-          <Send className='h-4 w-4 stroke-[2] -rotate-12 translate-x-[-1px] translate-y-[1px]' />
-        );
+        return <XIcon className='h-3.5 w-3.5' />;
     }
   };
 
@@ -88,10 +83,10 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Company Column (2 columns) */}
+          {/* First Link Column (2 columns) */}
           <div className='md:col-span-2 flex flex-col space-y-3.5'>
             <h4 className='text-base font-bold text-[#1e0d01] font-heading tracking-tight'>
-              {footerData.columns[0]?.title || 'Company'}
+              {footerData.columns[0]?.title || 'Product'}
             </h4>
             <ul className='space-y-2.5 text-sm text-[#1e0d01]/70'>
               {footerData.columns[0]?.links.map((link) => (
@@ -107,10 +102,10 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Product Column (2 columns) */}
+          {/* Second Link Column (2 columns) */}
           <div className='md:col-span-2 flex flex-col space-y-3.5'>
             <h4 className='text-base font-bold text-[#1e0d01] font-heading tracking-tight'>
-              {footerData.columns[1]?.title || 'Product'}
+              {footerData.columns[1]?.title || 'Company'}
             </h4>
             <ul className='space-y-2.5 text-sm text-[#1e0d01]/70'>
               {footerData.columns[1]?.links.map((link) => (
@@ -169,6 +164,17 @@ export function Footer() {
         {/* Bottom Credits & Copyright Card */}
         <div className='rounded-2xl bg-white/80 backdrop-blur-sm px-6 py-4 border border-[rgba(30,13,1,0.06)] flex flex-col sm:flex-row items-center justify-between gap-3 text-xs sm:text-sm text-neutral-500 shadow-2xs'>
           <p>{footerData.brand.copyright}</p>
+          <nav aria-label='Legal' className='flex items-center gap-5'>
+            {footerData.legal.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className='hover:text-[#f97518] transition-colors'
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
         </div>
       </Container>
     </footer>
