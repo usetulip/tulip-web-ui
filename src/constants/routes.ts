@@ -4,6 +4,7 @@ export const APP_ROUTES = {
   CAREER: "/career",
   CONTACT: "/contact",
   BLOG: "/blog",
+  DOCS: "/docs",
   PRIVACY_POLICY: "/privacy-policy",
   NOT_FOUND: "/404",
   BUNDLE_SECTION: "/#bundle",

@@ -1,0 +1,41 @@
+{
+  "title": "Tulip Docs",
+  "description": "Guides and reference for the Tulip design layer: briefs, the UIR engine, taste governance and the API.",
+  "groups": [
+    {
+      "title": "Getting Started",
+      "items": [
+        {
+          "slug": "getting-started",
+          "title": "Getting Started",
+          "description": "Go from a 5-minute brief to a production React repo and Master Figma system in 48 hours."
+        }
+      ]
+    },
+    {
+      "title": "Core Concepts",
+      "items": [
+        {
+          "slug": "architecture",
+          "title": "Architecture & MCP Protocol",
+          "description": "How the engine compiles your brief into an Intermediate UI Representation, and how agents connect to it over MCP."
+        },
+        {
+          "slug": "taste-governance",
+          "title": "Taste Governance",
+          "description": "The rules, audits and drift checks that keep every generated screen on-brand and production-safe."
+        }
+      ]
+    },
+    {
+      "title": "Reference",
+      "items": [
+        {
+          "slug": "api-reference",
+          "title": "API Reference",
+          "description": "Endpoints for submitting briefs, tracking sprints and reading your token registry."
+        }
+      ]
+    }
+  ]
+}

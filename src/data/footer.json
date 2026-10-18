@@ -22,6 +22,7 @@
       "title": "Product",
       "links": [
         { "label": "Features", "href": "/#engine" },
+        { "label": "Docs", "href": "/docs" },
         { "label": "Careers", "href": "/career" },
         { "label": "Contact", "href": "/contact" },
         { "label": "404", "href": "/404" },
