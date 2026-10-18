@@ -281,12 +281,12 @@ export function TasteDashboardDemo() {
               >
                 Most popular
               </span>
-              <p className='mt-3 text-sm font-semibold text-[#1e0d01]'>The Core Sprint</p>
+              <p className='mt-3 text-sm font-semibold text-[#1e0d01]'>The Infrastructure</p>
               <p className='mt-1 text-2xl font-bold text-[#1e0d01]'>
-                $999<span className='text-sm font-medium text-[#1e0d01]/50'> / month</span>
+                $1,499<span className='text-sm font-medium text-[#1e0d01]/50'> / month</span>
               </p>
               <ul className='mt-3 space-y-1.5 text-xs text-[#1e0d01]/70'>
-                {['Master Figma System', 'Next.js starter repo', 'Live MCP token sync'].map((item) => (
+                {['1:1 React & Next.js repo', 'Operator Taste Dashboard', 'Live MCP token streaming'].map((item) => (
                   <li key={item} className='flex items-center gap-2'>
                     <Check className='h-3.5 w-3.5 shrink-0 transition-colors duration-300' style={{ color: accentText }} />
                     {item}

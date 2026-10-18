@@ -36,7 +36,7 @@ Before handoff, the audit agent checks each build against these rules:
 
 ## Drift checks
 
-Design systems decay after handoff, as quick fixes add one-off colors and custom spacing. On **The Pipeline** plan, Tulip keeps governing after delivery:
+Design systems decay after handoff, as quick fixes add one-off colors and custom spacing. On the **Continuous Governance** plan, Tulip keeps governing after delivery:
 
 - **Automated GitHub PR audits** run the same rules on every pull request and comment with any violations.
 - **Design-system drift checks** compare the repository with the Master Figma file and flag values that no longer match.

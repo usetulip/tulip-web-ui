@@ -47,8 +47,11 @@ function ContactForm() {
           price: matched.price,
           period: matched.period,
         });
+        // Plan names may already start with "The" (e.g. "The Infrastructure")
+        const planName = /^the /i.test(matched.name) ? matched.name : `the ${matched.name}`;
+        const price = `${matched.price}${matched.period.replace(/\s+/g, '')}`;
         setMessage(
-          `Hi, I am interested in the ${matched.name} plan (${matched.price}${matched.period}). Could you please share more details and how we can get started?`
+          `Hi, I'm interested in ${planName} plan (${price}). Could you share more details and how we can get started?`
         );
       } else {
         setSelectedPlan({ name: planParam });

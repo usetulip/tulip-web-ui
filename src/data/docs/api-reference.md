@@ -63,7 +63,7 @@ Starts a 48-hour sprint from a validated brief.
 ```json
 {
   "brief_id": "brf_8x2k1",
-  "plan": "core-sprint"
+  "plan": "infrastructure"
 }
 ```
 

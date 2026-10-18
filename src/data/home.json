@@ -143,58 +143,60 @@
       {
         "id": "blueprint",
         "name": "The Blueprint",
-        "price": "$499",
+        "price": "$299",
         "period": "/ month",
-        "description": "Figma Master System",
-        "buttonText": "Get the Figma System",
+        "description": "Essential Figma & Token Registry",
+        "buttonText": "Get The Blueprint",
         "buttonVariant": "outline",
-        "buttonHref": "/contact?plan=The%20Blueprint",
         "features": [
-          "Token registry",
-          "Component library",
-          "Custom icons",
-          "24-hr delivery",
-          "Figma variable sync",
-          "Free community updates"
-        ]
+          "Figma Master Design System",
+          "Semantic Token Registry & Variable Sync",
+          "Production-Ready Icon Library",
+          "Read-Only MCP Access (Cursor & Claude Code)",
+          "Standard Community & Doc Updates",
+          "Zero Lock-In (100% Owned Assets)"
+        ],
+        "buttonHref": "/contact?plan=The%20Blueprint"
       },
       {
-        "id": "core-sprint",
-        "name": "The Core Sprint",
-        "price": "$999",
+        "id": "infrastructure",
+        "name": "The Infrastructure",
+        "price": "$1,499",
         "period": "/ month",
-        "description": "The Full Infrastructure",
-        "badge": "Save 20%",
+        "description": "Full Codebase & Real-Time MCP Engine",
+        "badge": "Save 20% Annually",
         "popular": true,
-        "buttonText": "Start My 48-Hour Sprint",
+        "buttonText": "Launch Your Infrastructure",
         "buttonVariant": "primary",
-        "buttonHref": "/contact?plan=The%20Core%20Sprint",
         "features": [
-          "Master Figma System",
-          "React/Next.js Starter Repo",
-          "Pre-configured Tailwind",
-          "4 Custom Page Layouts",
-          "48-hr delivery",
-          "Slack channel access"
-        ]
+          "Everything in The Blueprint",
+          "1:1 React & Next.js Production Repo",
+          "Pre-configured Tailwind CSS Architecture",
+          "48-Hour Initial Setup Sprint",
+          "Operator Taste Dashboard Access",
+          "Live MCP Token & Block Streaming (mcp.usetulip.co)",
+          "Shared Slack Channel Access"
+        ],
+        "buttonHref": "/contact?plan=The%20Infrastructure"
       },
       {
-        "id": "pipeline",
-        "name": "The Pipeline",
-        "price": "$4,999",
+        "id": "continuous-governance",
+        "name": "Continuous Governance",
+        "price": "$3,999",
         "period": "/ month",
-        "description": "Continuous Governance",
-        "buttonText": "Get Continuous Governance",
+        "description": "Automated PR Audits & Enterprise MCP",
+        "buttonText": "Enable Continuous Governance",
         "buttonVariant": "outline",
-        "buttonHref": "/contact?plan=The%20Pipeline",
         "features": [
-          "Everything in Sprint",
-          "Automated GitHub PR audits",
-          "Custom design-system drift checks",
-          "Priority AI generation",
-          "Dedicated design engineer",
-          "24/7 Slack support"
-        ]
+          "Everything in The Infrastructure",
+          "Automated GitHub PR Taste & Drift Audits",
+          "Custom Design System Rule Compiler",
+          "Multi-Tenant / Multi-Client MCP Streaming",
+          "Dedicated Design Engineer Support",
+          "Priority AI Component Generation",
+          "24/7 Dedicated Support"
+        ],
+        "buttonHref": "/contact?plan=Continuous%20Governance"
       }
     ],
     "accent": "plan."

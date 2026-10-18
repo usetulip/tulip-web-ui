@@ -34,8 +34,8 @@ export function PricingSection() {
 
             <ul className='mt-8 flex-1 space-y-2.5 px-6 sm:px-8'>
               {plan.features.map((feature) => (
-                <li key={feature} className='flex items-center gap-3 text-sm text-ink/75'>
-                  <Plus className='h-3.5 w-3.5 shrink-0 text-ink/45' aria-hidden='true' />
+                <li key={feature} className='flex items-start gap-3 text-sm leading-snug text-ink/75'>
+                  <Plus className='mt-[3px] h-3.5 w-3.5 shrink-0 text-ink/45' aria-hidden='true' />
                   {feature}
                 </li>
               ))}
