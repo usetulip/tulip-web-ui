@@ -6,6 +6,7 @@ import Link from 'next/link';
 import homeData from '@/data/home.json';
 import { Container } from '@/components/layout/Container';
 import { CornerDot } from '@/components/layout/SectionFrame';
+import { TasteDashboardDemo } from '@/components/sections/home/TasteDashboardDemo';
 import { Button } from '@/components/ui/button';
 import { ChevronRight, Star } from 'lucide-react';
 
@@ -166,7 +167,7 @@ export function HeroSection() {
           </div> */}
         </div>
 
-        {/* Expanding Hero Image on Scroll */}
+        {/* Expanding interactive demo on scroll */}
         <Container>
           <div
             ref={imageContainerRef}
@@ -176,15 +177,7 @@ export function HeroSection() {
             }}
           >
             <div className='relative rounded-2xl sm:rounded-3xl md:rounded-[2rem] border border-[rgba(30,13,1,0.08)] bg-white/90 p-2 sm:p-3 shadow-2xl backdrop-blur-xl'>
-              <div className='relative aspect-[16/10] md:aspect-[16/9] w-full overflow-hidden rounded-xl sm:rounded-2xl md:rounded-[1.5rem] bg-neutral-50'>
-                <Image
-                  src={hero.preview.thumbnail}
-                  alt='Tulip System Dashboard Preview'
-                  fill
-                  priority
-                  className='object-cover object-top'
-                />
-              </div>
+              <TasteDashboardDemo />
             </div>
           </div>
         </Container>
