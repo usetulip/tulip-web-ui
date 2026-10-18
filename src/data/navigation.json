@@ -5,20 +5,12 @@
   },
   "links": [
     {
-      "label": "Home",
-      "href": "/"
-    },
-    {
-      "label": "Product",
-      "href": "/#bundle"
-    },
-    {
-      "label": "Engine",
-      "href": "/#engine"
-    },
-    {
       "label": "Pricing",
       "href": "/#pricing"
+    },
+    {
+      "label": "FAQ",
+      "href": "/#faqs"
     },
     {
       "label": "Docs",
