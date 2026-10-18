@@ -13,7 +13,7 @@ export function ProcessSection() {
 
   return (
     <section id='process' aria-label={process.title}>
-      <SectionHead title={process.title} accent={process.accent}>
+      <SectionHead label='Process' title={process.title} accent={process.accent}>
         <p className='mt-5 max-w-xl text-[15px] leading-relaxed text-ink/70'>{sprintWorkflow.description}</p>
       </SectionHead>
 
@@ -27,7 +27,7 @@ export function ProcessSection() {
               <span className={`font-serif italic font-light text-[3.25rem] leading-none ${ACCENT_TEXT}`}>
                 {String(i + 1).padStart(2, '0')}
               </span>
-              <h3 className='mt-5 text-lg font-semibold tracking-[-0.015em] text-ink'>{step.title}</h3>
+              <h3 className='mt-5 text-xl font-semibold tracking-[-0.015em] text-ink'>{step.title}</h3>
               <p className='mt-2 text-sm leading-relaxed text-ink/70'>{step.body}</p>
             </div>
             <p className='mt-5 flex justify-between text-xs text-ink/50'>

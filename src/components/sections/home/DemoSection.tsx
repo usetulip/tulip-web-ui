@@ -8,7 +8,7 @@ export function DemoSection() {
 
   return (
     <section id='demo' aria-label={demo.title}>
-      <SectionHead title={demo.title} accent={demo.accent}>
+      <SectionHead label='Live demo' title={demo.title} accent={demo.accent}>
         <p className='mt-5 max-w-xl text-[15px] leading-relaxed text-ink/70'>{demo.description}</p>
       </SectionHead>
       <div className='px-5 sm:px-8'>

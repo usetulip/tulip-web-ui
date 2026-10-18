@@ -68,7 +68,7 @@ export function EngineSection() {
 
   const featureCopy = (feature: { title: string; description: string }) => (
     <div>
-      <h3 className="text-xl sm:text-2xl font-semibold tracking-[-0.02em] text-ink mb-2 leading-snug">
+      <h3 className="text-xl font-semibold tracking-[-0.015em] text-ink mb-2 leading-snug">
         {feature.title}
       </h3>
       <p className="text-sm sm:text-base text-[#1e0d01]/70 leading-relaxed">{feature.description}</p>
@@ -77,7 +77,7 @@ export function EngineSection() {
 
   return (
     <section id="engine" aria-label={engine.title}>
-      <SectionHead title={engine.title} accent={engine.accent}>
+      <SectionHead label="The engine" title={engine.title} accent={engine.accent}>
         <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-ink/70">{engine.description}</p>
       </SectionHead>
 

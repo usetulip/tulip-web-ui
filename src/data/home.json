@@ -79,7 +79,7 @@
         "title": "The 48-Hour Handoff",
         "description": "48 hours after your brief, you get the Master Figma file, a synced GitHub repo and your coded page layouts, ready for your backend engineers.",
         "specimen": "handoff",
-        "meta": "48-hour handoff",
+        "meta": "Figma + GitHub",
         "icon": "zap"
       }
     ],

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
@@ -22,7 +22,16 @@ function scrollToTarget(target: string | number) {
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+
+  // Once the page moves, the header picks up a blurred paper backing and a hairline
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   const links = navigationData?.links || [];
 
@@ -53,7 +62,11 @@ export function Header() {
   };
 
   return (
-    <header className='relative z-50 w-full'>
+    <header
+      className={`sticky top-0 z-50 w-full border-b transition-colors duration-300 ${
+        scrolled || mobileMenuOpen ? 'border-rule bg-paper/80 backdrop-blur-md' : 'border-transparent bg-transparent'
+      }`}
+    >
       <div className='mx-auto max-w-[1280px]'>
         <div className='grid grid-cols-[1fr_auto] md:grid-cols-[1fr_auto_1fr] items-center gap-4 px-5 sm:px-8 h-16'>
           {/* Logo */}

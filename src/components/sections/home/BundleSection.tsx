@@ -9,7 +9,7 @@ function FigmaSpecimen() {
   const rows = [
     { name: 'color/primary', value: '#F97518', swatch: '#f97518' },
     { name: 'color/ink', value: '#1E0D01', swatch: '#1e0d01' },
-    { name: 'color/paper', value: '#EDECE7', swatch: '#edece7' },
+    { name: 'color/paper', value: '#F5F4F1', swatch: '#f5f4f1' },
     { name: 'radius/lg', value: '16' },
     { name: 'space/4', value: '16' },
   ];
@@ -92,7 +92,7 @@ function IconsSpecimen() {
 
 function HandoffSpecimen() {
   return (
-    <div className='flex h-full flex-col sm:flex-row items-start sm:items-end justify-between gap-6 bg-paper-deep p-6 sm:p-10 text-ink'>
+    <div className='flex h-full flex-col sm:flex-row items-start sm:items-center justify-between gap-6 bg-paper-deep px-6 py-10 sm:px-10 sm:py-12 text-ink'>
       <pre className='font-mono text-[12px] sm:text-[13px] leading-[1.9] text-ink/75'>
         {'tulip-handoff/\n├─ figma/Master.fig\n├─ repo/            '}
         <span className='text-ink/45'>Next.js + Tailwind</span>
@@ -117,7 +117,7 @@ export function BundleSection() {
 
   return (
     <section id='bundle' aria-label={bundle.title}>
-      <SectionHead title={bundle.title} accent={bundle.accent}>
+      <SectionHead label='The bundle' title={bundle.title} accent={bundle.accent}>
         <p className='mt-5 max-w-xl text-[15px] leading-relaxed text-ink/70'>{bundle.description}</p>
       </SectionHead>
 
@@ -130,14 +130,14 @@ export function BundleSection() {
               key={item.id}
               className={`group bundle-card flex flex-col overflow-hidden rounded-[22px] bg-white ${isWide ? 'md:col-span-2' : ''}`}
             >
-              <div className={isWide ? 'aspect-[4/3] sm:aspect-[3/1]' : 'aspect-[4/3]'}>
+              <div className={isWide ? 'min-h-[220px]' : 'aspect-[16/10]'}>
                 <Specimen />
               </div>
               <div className='flex items-start gap-4 px-6 sm:px-8 py-6'>
                 <BundleIcon name={item.icon} />
                 <div className='min-w-0 flex-1'>
                   <div className='flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1'>
-                    <h3 className='text-lg font-semibold tracking-[-0.015em] text-ink'>{item.title}</h3>
+                    <h3 className='text-xl font-semibold tracking-[-0.015em] text-ink'>{item.title}</h3>
                     <span className='text-xs text-ink/50'>{item.meta}</span>
                   </div>
                   <p className='mt-1.5 max-w-xl text-sm leading-relaxed text-ink/70'>{item.description}</p>

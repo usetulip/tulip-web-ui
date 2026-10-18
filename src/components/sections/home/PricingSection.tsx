@@ -9,7 +9,7 @@ export function PricingSection() {
 
   return (
     <section id='pricing' aria-label={pricing.title}>
-      <SectionHead title={pricing.title} accent={pricing.accent}>
+      <SectionHead label='Pricing' title={pricing.title} accent={pricing.accent}>
         <p className='mt-5 max-w-xl text-[15px] leading-relaxed text-ink/70'>{pricing.description}</p>
       </SectionHead>
 

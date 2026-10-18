@@ -33,23 +33,48 @@ export function HeroSection() {
   const [before, after] = hero.title.split('AI-driven');
 
   return (
-    <section aria-labelledby='hero-title' className='relative overflow-hidden px-5 sm:px-8 pt-8 md:pt-14 pb-24'>
-      <p className='flex items-center justify-center gap-2 text-[13px] text-ink/70'>
-        <span className='h-1.5 w-1.5 rounded-full bg-[#f97518]' aria-hidden='true' />
-        {hero.badge.text}
-      </p>
+    <section aria-labelledby='hero-title' className='relative overflow-hidden px-5 sm:px-8 pt-10 md:pt-16 pb-10'>
+      <div className='flex justify-center'>
+        <Link
+          href='/docs/architecture'
+          className='group inline-flex items-center gap-2.5 rounded-full border border-rule bg-white/70 py-1 pl-1 pr-3.5 text-[13px] text-ink/75 backdrop-blur-sm transition-colors hover:border-ink/30 hover:text-ink'
+        >
+          <span className='rounded-full bg-[#ffe7d2] px-2 py-0.5 text-[12px] font-medium text-ink'>{hero.badge.tag}</span>
+          {hero.badge.text}
+          <ArrowUpRight className='h-3.5 w-3.5 text-ink/45 transition-colors group-hover:text-ink' aria-hidden='true' />
+        </Link>
+      </div>
 
       <h1
         id='hero-title'
-        className='mx-auto mt-6 max-w-5xl text-center font-serif font-light text-[clamp(2.9rem,7.4vw,6.75rem)] leading-[0.96] tracking-[-0.025em] text-ink'
+        className='mx-auto mt-7 max-w-5xl text-center font-serif font-light text-[clamp(2.9rem,7.4vw,6.75rem)] leading-[0.96] tracking-[-0.025em] text-ink'
       >
         {before}
         <em className='italic whitespace-nowrap'>AI-driven</em>
         {after}
       </h1>
 
+      <div className='mx-auto mt-7 max-w-xl text-center'>
+        <p className='text-[16px] leading-relaxed text-ink/70'>{hero.description}</p>
+        <div className='mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3'>
+          <Link
+            href={hero.cta.href}
+            className='inline-flex items-center gap-2 rounded-full bg-[#f97518] px-6 py-3 text-sm font-semibold text-ink transition-colors hover:bg-[#e65f00]'
+          >
+            {hero.cta.label}
+            <ArrowUpRight className='h-4 w-4' />
+          </Link>
+          <Link
+            href='/docs'
+            className='font-serif italic text-lg text-ink underline decoration-ink/25 underline-offset-[6px] hover:decoration-ink'
+          >
+            Read the docs
+          </Link>
+        </div>
+      </div>
+
       {/* Desktop: annotated specimen */}
-      <div className='relative mx-auto mt-4 hidden lg:block max-w-[1080px] aspect-[1080/600]'>
+      <div className='relative mx-auto mt-14 hidden lg:block max-w-[1080px] aspect-[1080/600]'>
         {/* Centering lives on the wrapper so the load animation's transform can't override it */}
         <div className='absolute inset-y-0 left-1/2 -translate-x-1/2'>
           <TulipAscii className='animate-tulip h-full aspect-[400/520]' />
@@ -112,7 +137,7 @@ export function HeroSection() {
       </div>
 
       {/* Phones and tablets: flower, then the specs as a grid */}
-      <div className='lg:hidden mt-8'>
+      <div className='lg:hidden mt-12'>
         <TulipAscii className='animate-tulip mx-auto h-[300px] sm:h-[380px] aspect-[400/520]' />
         <div className='mx-auto mt-6 grid max-w-xl grid-cols-2 gap-2.5 sm:gap-3'>
           {hero.callouts.map((c) => (
@@ -121,24 +146,6 @@ export function HeroSection() {
         </div>
       </div>
 
-      <div className='mx-auto mt-10 lg:mt-6 max-w-xl text-center'>
-        <p className='text-[16px] leading-relaxed text-ink/70'>{hero.description}</p>
-        <div className='mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3'>
-          <Link
-            href={hero.cta.href}
-            className='inline-flex items-center gap-2 rounded-full bg-[#f97518] px-6 py-3 text-sm font-semibold text-ink transition-colors hover:bg-[#e65f00]'
-          >
-            {hero.cta.label}
-            <ArrowUpRight className='h-4 w-4' />
-          </Link>
-          <Link
-            href='/docs'
-            className='font-serif italic text-lg text-ink underline decoration-ink/25 underline-offset-[6px] hover:decoration-ink'
-          >
-            Read the docs
-          </Link>
-        </div>
-      </div>
     </section>
   );
 }
