@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import navigationData from '@/data/navigation.json';
 import { useApplyModal } from '@/components/modals/ApplyModal';
+import { docsLinkProps } from '@/lib/links';
 import { ArrowUpRight, Menu, X } from 'lucide-react';
 
 function scrollToTarget(target: string | number) {
@@ -89,6 +90,7 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
+                {...docsLinkProps(link.href)}
                 onClick={(e) => handleNavClick(e, link.href)}
                 className='text-sm text-ink/70 hover:text-ink transition-colors'
               >
@@ -127,6 +129,7 @@ export function Header() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
+                    {...docsLinkProps(link.href)}
                     onClick={(e) => handleNavClick(e, link.href)}
                     className='block py-3 font-serif text-2xl text-ink'
                   >

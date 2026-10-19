@@ -82,6 +82,15 @@ function validate(values: FormValues) {
 const inputClass =
   'mt-1.5 block w-full rounded-xl border bg-white px-3.5 py-2.5 text-[15px] text-ink placeholder:text-ink/35 outline-none transition-colors focus:border-ink/50 focus:ring-2 focus:ring-[#f97518]/25';
 
+// Every field in the form is required; the asterisk is visual, aria-required carries it for screen readers
+function RequiredMark() {
+  return (
+    <span aria-hidden='true' className='ml-0.5 text-[#d14f0a]'>
+      *
+    </span>
+  );
+}
+
 function Field({
   id,
   label,
@@ -97,6 +106,7 @@ function Field({
     <div>
       <label htmlFor={id} className='text-sm font-medium text-ink'>
         {label}
+        <RequiredMark />
       </label>
       {children}
       {error && (
@@ -139,6 +149,7 @@ function ApplyModal({
 
   const fieldProps = (field: FieldName) => ({
     id: `${uid}-${field}`,
+    'aria-required': true,
     'aria-invalid': errors[field] ? true : undefined,
     'aria-describedby': errors[field] ? `${uid}-${field}-error` : undefined,
   });
@@ -233,7 +244,11 @@ function ApplyModal({
                 {apply.description}
               </Dialog.Description>
 
-              <div className='mt-7 grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-4'>
+              <p className='mt-6 text-xs text-ink/55'>
+                <span aria-hidden='true' className='text-[#d14f0a]'>*</span> Required
+              </p>
+
+              <div className='mt-3 grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-4'>
                 <Field id={`${uid}-name`} label='Name' error={errors.name}>
                   <input
                     {...fieldProps('name')}
@@ -271,8 +286,11 @@ function ApplyModal({
                 </div>
 
                 <fieldset className='sm:col-span-2' aria-describedby={errors.ide ? `${uid}-ide-error` : undefined}>
-                  <legend className='text-sm font-medium text-ink'>Primary AI IDE</legend>
-                  <div className='mt-1.5 grid grid-cols-3 gap-2'>
+                  <legend className='text-sm font-medium text-ink'>
+                    Primary AI IDE
+                    <RequiredMark />
+                  </legend>
+                  <div role='radiogroup' aria-required='true' aria-label='Primary AI IDE' className='mt-1.5 grid grid-cols-3 gap-2'>
                     {apply.ides.map((ide, i) => {
                       const checked = values.ide === ide;
                       return (

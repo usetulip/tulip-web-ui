@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import footerData from '@/data/footer.json';
 import { FooterLandscape } from '@/components/layout/FooterLandscape';
+import { docsLinkProps } from '@/lib/links';
 import { Linkedin } from 'lucide-react';
 
 function XIcon({ className }: { className?: string }) {
@@ -67,7 +68,7 @@ export function Footer() {
                 <ul className='mt-4 space-y-2.5'>
                   {column.links.map((link) => (
                     <li key={link.label}>
-                      <Link href={link.href} className='text-sm text-ink/65 hover:text-ink transition-colors'>
+                      <Link href={link.href} {...docsLinkProps(link.href)} className='text-sm text-ink/65 hover:text-ink transition-colors'>
                         {link.label}
                       </Link>
                     </li>

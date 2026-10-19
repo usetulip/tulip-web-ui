@@ -373,19 +373,20 @@ export function TasteDashboardDemo() {
           </div>
 
           {/* MCP stream */}
-          <div className='flex-1 rounded-xl bg-[#1e0d01] p-4 font-mono text-[11px] leading-relaxed min-h-[148px]'>
-            <div className='mb-2 flex items-center justify-between text-white/40'>
+          {/* Fixed height so streaming lines never resize the card or shift the layout */}
+          <div className='flex h-[200px] flex-col overflow-hidden rounded-xl bg-[#1e0d01] p-4 font-mono text-[11px] leading-relaxed'>
+            <div className='mb-2 flex shrink-0 items-center justify-between text-white/40'>
               <span>mcp.usetulip.co</span>
               <span className='flex items-center gap-1 text-[#a5ff00]'>
                 <Sparkles className='h-3 w-3' />
                 Cursor
               </span>
             </div>
-            <ul className='space-y-1' aria-live='polite'>
+            <ul className='flex min-h-0 flex-1 flex-col justify-end gap-1 overflow-hidden' aria-live='polite'>
               {log.map((line) => (
                 <li
                   key={line.id}
-                  className={`truncate animate-[demo-fade-in_0.3s_ease-out] ${
+                  className={`shrink-0 truncate animate-[demo-fade-in_0.3s_ease-out] ${
                     line.tone === 'ok' ? 'text-[#a5ff00]' : line.tone === 'token' ? 'text-[#ffb37a]' : 'text-white/55'
                   }`}
                 >

@@ -38,6 +38,8 @@ export function HeroSection() {
       <div className='flex justify-center'>
         <Link
           href='/docs/architecture'
+          target='_blank'
+          rel='noopener noreferrer'
           className='group inline-flex items-center gap-2.5 rounded-full border border-rule bg-white/70 py-1 pl-1 pr-3.5 text-[13px] text-ink/75 backdrop-blur-sm transition-colors hover:border-ink/30 hover:text-ink'
         >
           <span className='rounded-full bg-[#ffe7d2] px-2 py-0.5 text-[12px] font-medium text-ink'>{hero.badge.tag}</span>
@@ -64,6 +66,8 @@ export function HeroSection() {
           </ApplyButton>
           <Link
             href='/docs'
+            target='_blank'
+            rel='noopener noreferrer'
             className='font-serif italic text-lg text-ink underline decoration-ink/25 underline-offset-[6px] hover:decoration-ink'
           >
             Read the docs

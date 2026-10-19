@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import Link from 'next/link';
 import { Minus, Plus } from 'lucide-react';
 import faqsData from '@/data/faqs.json';
 import { SectionLabel, withAccent } from '@/components/layout/SectionHead';
@@ -21,12 +20,6 @@ export function FaqSection() {
             {withAccent(faqsData.title, faqsData.accent)}
           </h2>
           <p className='mt-5 max-w-sm text-[15px] leading-relaxed text-ink/70'>{faqsData.description}</p>
-          <Link
-            href='/contact'
-            className='mt-6 inline-block font-serif italic text-lg text-ink underline decoration-ink/25 underline-offset-[6px] hover:decoration-ink'
-          >
-            Ask us directly
-          </Link>
         </div>
 
         <ul className='lg:col-span-7 border-t border-rule'>
