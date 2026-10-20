@@ -26,7 +26,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://tulipai.com"),
+  metadataBase: new URL("https://www.usetulip.co"),
   title: "Tulip - The design layer for AI-driven software",
   description:
     "Stop letting AI hallucinate your UI. Tulip pairs strict Taste Governance with real-time Model Context Protocol (MCP) streaming, pushing human-approved design tokens and component blocks directly into your AI IDE.",
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     title: "Tulip - The design layer for AI-driven software",
     description:
       "Stop letting AI hallucinate your UI. Tulip pairs strict Taste Governance with real-time Model Context Protocol (MCP) streaming, pushing human-approved design tokens and component blocks directly into your AI IDE.",
-    images: ["/assets/q7TQ8E0Bc6qaCAnDrgp0wb3sTCg.png"],
+    url: "/",
     type: "website",
     siteName: "Tulip",
   },
@@ -64,7 +64,6 @@ export const metadata: Metadata = {
     title: "Tulip - The design layer for AI-driven software",
     description:
       "Stop letting AI hallucinate your UI. Tulip pairs strict Taste Governance with real-time Model Context Protocol (MCP) streaming, pushing human-approved design tokens and component blocks directly into your AI IDE.",
-    images: ["/assets/q7TQ8E0Bc6qaCAnDrgp0wb3sTCg.png"],
   },
 };
 
