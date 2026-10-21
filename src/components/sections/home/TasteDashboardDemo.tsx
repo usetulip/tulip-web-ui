@@ -284,7 +284,7 @@ export function TasteDashboardDemo() {
               </span>
               <p className='mt-3 text-sm font-semibold text-[#1e0d01]'>The Infrastructure</p>
               <p className='mt-1 text-2xl font-bold text-[#1e0d01]'>
-                $1,499<span className='text-sm font-medium text-[#1e0d01]/50'> / month</span>
+                $349<span className='text-sm font-medium text-[#1e0d01]/50'> / month</span>
               </p>
               <ul className='mt-3 space-y-1.5 text-xs text-[#1e0d01]/70'>
                 {['1:1 React & Next.js repo', 'Operator Taste Dashboard', 'Live MCP token streaming'].map((item) => (

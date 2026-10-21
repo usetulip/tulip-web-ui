@@ -10,7 +10,8 @@ import { cn } from '@/lib/utils';
 // opens it; pricing buttons pass their plan so "Preferred tier" starts preselected.
 
 const { apply, pricing } = homeData;
-const TIERS = pricing.plans.map((plan) => plan.name);
+// Plans plus the one-off Launch Sprint.
+const TIERS = [...pricing.plans.map((plan) => plan.name), pricing.oneOff.name];
 
 interface ApplyContextValue {
   openApply: (tier?: string) => void;
@@ -357,6 +358,9 @@ function ApplyModal({
                         {plan.period.replace(/\s+/g, '')}
                       </option>
                     ))}
+                    <option value={pricing.oneOff.name} className='text-ink'>
+                      {pricing.oneOff.name} · {pricing.oneOff.price} {pricing.oneOff.period}
+                    </option>
                   </select>
                 </Field>
               </div>

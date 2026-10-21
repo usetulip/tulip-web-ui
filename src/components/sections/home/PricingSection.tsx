@@ -3,9 +3,13 @@ import { ArrowUpRight, Plus } from 'lucide-react';
 import homeData from '@/data/home.json';
 import { SectionHead } from '@/components/layout/SectionHead';
 import { ApplyButton } from '@/components/modals/ApplyModal';
+import { FeatureInfo } from '@/components/sections/home/FeatureInfo';
+
+type Feature = string | { text: string; info: { title: string; items: string[] } };
 
 export function PricingSection() {
   const { pricing } = homeData;
+  const { oneOff } = pricing;
 
   return (
     <section id='pricing' aria-label={pricing.title}>
@@ -31,14 +35,27 @@ export function PricingSection() {
               <span className='font-serif font-light text-[clamp(3rem,4.6vw,4rem)] leading-none tracking-[-0.02em]'>{plan.price}</span>
               <span className='text-sm text-ink/60'>{plan.period}</span>
             </p>
+            <p className='px-6 sm:px-8 mt-2 text-xs text-ink/55'>{plan.setup}</p>
 
             <ul className='mt-8 flex-1 space-y-2.5 px-6 sm:px-8'>
-              {plan.features.map((feature) => (
-                <li key={feature} className='flex items-start gap-3 text-sm leading-snug text-ink/75'>
-                  <Plus className='mt-[3px] h-3.5 w-3.5 shrink-0 text-ink/45' aria-hidden='true' />
-                  {feature}
-                </li>
-              ))}
+              {(plan.features as Feature[]).map((feature) => {
+                const text = typeof feature === 'string' ? feature : feature.text;
+                return (
+                  <li key={text} className='relative flex items-start gap-3 text-sm leading-snug text-ink/75'>
+                    <Plus className='mt-[3px] h-3.5 w-3.5 shrink-0 text-ink/45' aria-hidden='true' />
+                    <span className='inline-flex items-start'>
+                      {typeof feature === 'string' ? (
+                        text
+                      ) : (
+                        <>
+                          <span className='font-medium text-ink'>{text}</span>
+                          <FeatureInfo label={text} title={feature.info.title} items={feature.info.items} />
+                        </>
+                      )}
+                    </span>
+                  </li>
+                );
+              })}
             </ul>
 
             <div className='px-6 sm:px-8 pt-8 pb-7'>
@@ -56,6 +73,26 @@ export function PricingSection() {
             </div>
           </article>
         ))}
+      </div>
+
+      <div className='mt-4 px-5 sm:px-8'>
+        <div className='flex flex-col gap-5 rounded-[22px] border border-rule px-6 sm:px-8 py-6 md:flex-row md:items-center md:justify-between'>
+          <div className='max-w-2xl'>
+            <p className='flex flex-wrap items-baseline gap-x-3 gap-y-1 text-ink'>
+              <span className='text-lg font-semibold tracking-[-0.015em]'>{oneOff.name}</span>
+              <span className='font-serif text-2xl font-light tracking-[-0.02em]'>{oneOff.price}</span>
+              <span className='text-sm text-ink/60'>{oneOff.period}</span>
+            </p>
+            <p className='mt-1.5 text-sm leading-relaxed text-ink/65'>{oneOff.description}</p>
+          </div>
+          <ApplyButton
+            tier={oneOff.name}
+            className='flex shrink-0 items-center justify-center gap-2 rounded-full border border-rule px-5 py-3 text-sm font-semibold text-ink transition-colors hover:border-ink cursor-pointer'
+          >
+            {oneOff.buttonText}
+            <ArrowUpRight className='h-4 w-4' />
+          </ApplyButton>
+        </div>
       </div>
     </section>
   );

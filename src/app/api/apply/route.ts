@@ -9,7 +9,8 @@ import homeData from "@/data/home.json";
 
 const IDES = homeData.apply.ides;
 const STAGES = homeData.apply.stages;
-const TIERS = homeData.pricing.plans.map((plan) => plan.name);
+// Plans plus the one-off Launch Sprint.
+const TIERS = [...homeData.pricing.plans.map((plan) => plan.name), homeData.pricing.oneOff.name];
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 interface Application {

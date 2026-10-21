@@ -138,64 +138,85 @@
   "pricing": {
     "badge": "Pricing",
     "title": "Pick your plan.",
-    "description": "Fixed monthly pricing. Pick the plan that matches how much of your frontend you want governed.",
+    "description": "Built for founders and small product teams. Every plan includes a monthly allowance of governed screens. Pay annually and get two months free.",
     "plans": [
       {
         "id": "blueprint",
         "name": "The Blueprint",
-        "price": "$299",
+        "price": "$49",
         "period": "/ month",
-        "description": "Essential Figma & Token Registry",
+        "description": "Tokens, Figma variables and read-only MCP",
+        "setup": "No setup fee",
         "buttonText": "Get The Blueprint",
         "buttonVariant": "outline",
         "features": [
-          "Figma Master Design System",
-          "Semantic Token Registry & Variable Sync",
-          "Production-Ready Icon Library",
-          "Read-Only MCP Access (Cursor & Claude Code)",
-          "Standard Community & Doc Updates",
-          "Zero Lock-In (100% Owned Assets)"
+          "Brand design direction and semantic token registry",
+          "Figma variables file (Tokens Studio)",
+          "Read-only MCP access in Cursor and Claude Code",
+          "2 governed screens a month",
+          "Extra screens $19 each",
+          "Zero lock-in: you own every asset"
         ]
       },
       {
         "id": "infrastructure",
         "name": "The Infrastructure",
-        "price": "$1,499",
+        "price": "$349",
         "period": "/ month",
-        "description": "Full Codebase & Real-Time MCP Engine",
-        "badge": "Save 20% Annually",
+        "description": "Production repo and live MCP streaming",
+        "setup": "+ $499 one-time setup, waived on annual",
+        "badge": "Most popular",
         "popular": true,
         "buttonText": "Launch Your Infrastructure",
         "buttonVariant": "primary",
         "features": [
           "Everything in The Blueprint",
-          "1:1 React & Next.js Production Repo",
-          "Pre-configured Tailwind CSS Architecture",
-          "48-Hour Initial Setup Sprint",
-          "Operator Taste Dashboard Access",
-          "Live MCP Token & Block Streaming (mcp.usetulip.co)",
-          "Shared Slack Channel Access"
+          "48-hour setup sprint",
+          "1:1 React and Next.js production repo",
+          "12 governed screens a month, reviewed by an operator",
+          "Extra screens $15 each",
+          "Live MCP token and block streaming",
+          "Shared Slack channel"
         ]
       },
       {
         "id": "continuous-governance",
         "name": "Continuous Governance",
-        "price": "$3,999",
+        "price": "$1,499",
         "period": "/ month",
-        "description": "Automated PR Audits & Enterprise MCP",
+        "description": "A named Tulip designer and automated PR audits",
+        "setup": "Setup included",
         "buttonText": "Enable Continuous Governance",
         "buttonVariant": "outline",
         "features": [
           "Everything in The Infrastructure",
-          "Automated GitHub PR Taste & Drift Audits",
-          "Custom Design System Rule Compiler",
-          "Multi-Tenant / Multi-Client MCP Streaming",
-          "Dedicated Design Engineer Support",
-          "Priority AI Component Generation",
-          "24/7 Dedicated Support"
+          {
+            "text": "Named Tulip designer",
+            "info": {
+              "title": "What your designer does",
+              "items": [
+                "Runs onboarding: a 1-hour kickoff to set your brand direction, then signs off the design direction with you.",
+                "Joins a weekly 30-minute call and manages delivery: tracks requests, sets priorities and hands off to your engineers.",
+                "Up to 8 hours a month, with replies within 1 business day.",
+                "Extra hours at $40/hr, or move to a custom plan."
+              ]
+            }
+          },
+          "30 governed screens a month",
+          "Extra screens $12 each",
+          "Automated GitHub PR taste and drift audits",
+          "Custom design-system rule compiler",
+          "Priority generation queue"
         ]
       }
     ],
+    "oneOff": {
+      "name": "Launch Sprint",
+      "price": "$799",
+      "period": "one-time",
+      "description": "Need the system once? A 48-hour sprint with your design direction, 8 governed screens and the production repo. No subscription.",
+      "buttonText": "Book a Launch Sprint"
+    },
     "accent": "plan."
   },
   "ctaBanner": {
